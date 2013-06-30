@@ -1,0 +1,26 @@
+name: TalkingMobs
+version: 1.0
+description: 'Let mobs talk to players on events like damage or death'
+author: Programie
+website: http://minearea.net
+main: net.minearea.talkingmobs.TalkingMobs
+commands:
+  talkingmobs:
+    description: 'Command for actions of Talking Mobs'
+    permission: talkingmobs
+    usage: 'Use /talkingmobs help for help'
+permissions:
+  talkingmobs.*:
+    description: 'Gives access to all features'
+    children:
+      talkingmobs: true
+      talkingmobs.receive: true
+      talkingmobs.reload: true
+  talkingmobs:
+    description: 'Allow access to the /talkingmobs command'
+    default: true
+  talkingmobs.receive:
+    description: 'Receive mob messages'
+    default: true
+  talkingmobs.reload:
+    description: 'Allows to reload the plugin configuration'
