@@ -8,7 +8,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 /**
- * Class to send mob messages to players
+ * Class providing methods to send mob messages to players
  */
 public class Message
 {
@@ -50,6 +50,12 @@ public class Message
 		plugin = pluginInstance;
 	}
 
+	/**
+	 * Get a random message for the specified mob and event type
+	 * @param mob The entity of the mob for which the message should be fetched
+	 * @param eventType The event type of the message
+	 * @return A string containing the message
+	 */
 	private String getMessage(Entity mob, EventType eventType)
 	{
 		List<String> messages;
@@ -75,6 +81,11 @@ public class Message
 		return null;
 	}
 
+	/**
+	 * Check whether the player has the permission to receive mob messages
+	 * @param player The player which should be checked
+	 * @return True if the player has the permission, false otherwise
+	 */
 	private boolean isAllowed(Player player)
 	{
 		return player.hasPermission("talkingmobs.receive");
@@ -109,6 +120,12 @@ public class Message
 		return plugin.getConfig().getBoolean("players." + player.getName() + ".enabled.all", true);
 	}
 
+	/**
+	 * Format the message and send it to the player
+	 * Formatting includes replacing %player% with the name of the player and translating color codes.
+	 * @param player The player which should receive the message
+	 * @param message The message to send
+	 */
 	private void sendFormattedMessage(Player player, String message)
 	{
 		String formattedMessage = message.replaceAll("%player%", player.getName());
@@ -120,7 +137,7 @@ public class Message
 	 * Send a mob message to the player
 	 * @param mob The mob which sends the message
 	 * @param player The player which should receive the message
-	 * @param messageType The type of the message
+	 * @param eventType The event type
 	 */
 	public void sendMessage(Entity mob, Player player, EventType eventType)
 	{
@@ -137,7 +154,7 @@ public class Message
 	/**
 	 * Send a mob message to all players
 	 * @param mob The mob which sends the message
-	 * @param messageType The type of the message
+	 * @param eventType The event type
 	 */
 	public void sendMessage(Entity mob, EventType eventType)
 	{

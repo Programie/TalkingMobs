@@ -44,7 +44,7 @@ public final class TalkingMobs extends JavaPlugin
 							eventTypes.add(eventType.toString());
 						}
 
-						sender.sendMessage("/talkingmobs toggle <type> - Toggle messages send by mobs (Type is optional and can be used to only toggle the specified message type)");
+						sender.sendMessage("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
 						sender.sendMessage("");
 						sender.sendMessage("Message types: " + StringUtils.join(eventTypes, ", "));
 
@@ -60,6 +60,7 @@ public final class TalkingMobs extends JavaPlugin
 						{
 							sender.sendMessage(ChatColor.RED + "You do not have the required permissions for this command!");
 						}
+
 						return true;
 					case "toggle":
 						if (sender instanceof Player)
@@ -106,10 +107,12 @@ public final class TalkingMobs extends JavaPlugin
 						{
 							sender.sendMessage(ChatColor.RED + "This command can only be run by a player!");
 						}
+
 						return true;
 				}
 			}
 		}
+
 		return false;
 	}
 }

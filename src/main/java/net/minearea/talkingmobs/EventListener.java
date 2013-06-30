@@ -8,11 +8,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
+/**
+ * Class providing all event listeners required for the plugin
+ */
 public class EventListener implements Listener
 {
 	private final TalkingMobs plugin;
 	private final Message message;
 
+	/**
+	 * Constructor of the class
+	 * @param pluginInstance The instance of this plugin (Instance of the TalkingMobs class)
+	 * @param messageInstance The instance of the Message class
+	 */
 	public EventListener(TalkingMobs pluginInstance, Message messageInstance)
 	{
 		plugin = pluginInstance;
@@ -31,6 +39,7 @@ public class EventListener implements Listener
 	{
 		Entity damager = event.getDamager();
 		Entity entity = event.getEntity();
+
 		if (damager instanceof Player && !entity.isDead())
 		{
 			message.sendMessage(entity, (Player) damager, Message.EventType.attacked);
