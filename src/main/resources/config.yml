@@ -1,14 +1,14 @@
-messageformat:
-  alive: "[&a%mobname%&r] %message%"
+messageFormat:
+  idle: "[&a%mobname%&r] %message%"
   attacked: "[&a%mobname%&r] %message%"
-  interact: "[&a%mobname%&r] %message%"
+  interacted: "[&a%mobname%&r] %message%"
   killed: "[&a%mobname%&r] &c%message%"
-  spawn: "[&a%mobname%&r] %message%"
+  spawned: "[&a%mobname%&r] %message%"
 messages:
   SnowMan:
     spawned:
       - "I have been spawned!"
-    alive:
+    idle:
       - "A man's feet should be planted in his country, but his eyes should survey the world."
       - "Wine makes a man more pleased with himself; I do not say that it makes him more pleasing to others."
       - "You can fool too many of the people too much of the time."
@@ -23,11 +23,11 @@ messages:
     killed:
       - "I have failed..."
   BabyPig:
-    alive:
+    idle:
       - "I like it to poopoo!"
       - "Mommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Poopie!"
       - "I love my Mommy and Daddy!"
     attacked:
@@ -35,11 +35,11 @@ messages:
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
   BabyChicken:
-    alive:
+    idle:
       - "I like it to poopoo!"
       - "Mommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Poopie!"
       - "I love my Mommy and Daddy!"
     attacked:
@@ -47,11 +47,11 @@ messages:
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
   BabyCow:
-    alive:
+    idle:
       - "I like it to poopoo!"
       - "Moommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Poopie!"
       - "I love my Mommy and Daddy!"
     attacked:
@@ -59,11 +59,11 @@ messages:
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
   BabyMushroomCow:
-    alive:
+    idle:
       - "I like it to poopoo!"
       - "Moommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Poopie!"
       - "I love my Mommy and Daddy!"
     attacked:
@@ -71,11 +71,11 @@ messages:
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
   BabySheep:
-    alive:
+    idle:
       - "I like it to poopoo!"
       - "Mommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Poopie!"
       - "I love my Mommy and Daddy!"
     attacked:
@@ -83,11 +83,11 @@ messages:
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
   BabyOcelot:
-    alive:
+    idle:
       - "Meow!"
       - "Mommy!"
       - "Daddy!"
-    interact:
+    interacted:
       - "Purr.."
       - "I love my Mommy and Daddy!"
     attacked:
@@ -100,9 +100,9 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    interact:
+    interacted:
       - "Bwak Bwak!!"
-    alive: 
+    idle: 
       - "Bwak!"
       - "Bwak! Bwaaak!"
       - "Quack, I mean Bwak!"
@@ -118,10 +118,10 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    alive: 
+    idle: 
       - "Moo"
       - "Moooooo!"
-    interact:
+    interacted:
       - "My milk is GOOD!"
       - "Hi, Moooo...."
     attacked:
@@ -135,10 +135,10 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm comingg!"
-    alive: 
+    idle: 
       - "Moo"
       - "Moooooo!"
-    interact:
+    interacted:
       - "My milk is GOOD!"
       - "Hi, Moooo...."
       - "I don't feel so Moooo!"
@@ -153,10 +153,10 @@ messages:
       - "Purr.. purr.."
       - "Meow, I'm here!"
       - "Time to plot world domination.."
-    alive: 
+    idle: 
       - "Meow."
       - "Purr.."
-    interact:
+    interacted:
       - "Give me fish!"
       - "I'm cute and cuddly!"
       - "I hate Creepers."
@@ -168,10 +168,10 @@ messages:
   VillagerGolem:
     spawned:
       - "*I shall protect thee!*"
-    alive: 
+    idle: 
       - "*No hostile activity detected.*"
       - "*Patrol sequence finished, running again*"
-    interact:
+    interacted:
       - "*Hello human*"
       - "*Move along*"
       - "*Buzzzz*"
@@ -186,12 +186,12 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    alive: a
+    idle: a
       - "Ummm.... Oink!"
       - "Oink! I'm delicious!"
       - "Oink"
       - "I'm a Pig."
-    interact:
+    interacted:
       - "Good Day to you sir!"
       - "The sheep are planning world domination, don't let them fool you."
       - "Don't trust the cow's milk, they spiked it with ruffies."
@@ -215,11 +215,11 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    alive: 
+    idle: 
       - "Maaa..."
       - "Maaaaa... I'm bored.."
       - "Maaahaa!"
-    interact:
+    interacted:
       - "I'm covered in wool!"
     attacked:
       - "Maaaaa Gawd!!!"
@@ -229,10 +229,10 @@ messages:
   Squid:
     spawned:
       - ":)"
-    alive:
+    idle:
       - "I'm a Squid.. HerpaDerp!"
       - "Squip!"
-    interact:
+    interacted:
       - "Hey, I'm a Squid!"
       - "I listen to the Song of Storms!"
       - "Squip!"
@@ -247,7 +247,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    alive:
+    idle:
       - "I used to be an adventurer just like you, then I took an arrow to the knee."
       - "Let me guess, somebody stole your sweetroll?"
       - "I'm very busy, please leave me alone."
@@ -270,12 +270,12 @@ messages:
   Enderman:
     spawned:
       - "Why am I part of this world?"
-    alive:
+    idle:
       - "%player% I see you."
       - "Where am I?"
       - "What's going on..?"
       - "This world.."
-    interact:
+    interacted:
       - "Who are you?"
       - "My dick, your mouth."
       - "This power..."
@@ -294,11 +294,11 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    alive:
+    idle:
       - "Bark, bark"
       - "Growl"
       - "Pork, mmmmmmmm."
-    interact:
+    interacted:
       - "Feed me!"
       - "Don't just stand there, give me a bone!"
       - "Damn cats always starting trouble with us."
@@ -316,7 +316,7 @@ messages:
   PigZombie:
     spawned:
       - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
-    alive:
+    idle:
       - "Squuuueee!!"
       - "Oink-Ouuuaaah!"
     attacked:
@@ -329,12 +329,12 @@ messages:
     spawned:
       - "hm?"
       - "A new existance"
-    alive:
+    idle:
       - "Where am I?"
       - "What's going on..?"
       - "This world.."
       - "Why do I even exist?"
-    interact:
+    interacted:
       - "Who are you?"
       - "The Nether consumes all."
       - "This power..."
@@ -352,7 +352,7 @@ messages:
   Creeper:
     spawned:
       - "Sssssst?"
-    alive:
+    idle:
       - "Sssss..."
       - "That'ssss a nice housssse you got there..."
     attacked:
@@ -364,12 +364,12 @@ messages:
   Ghast:
     spawned:
       - "You have Summoned me?"
-    alive:
+    idle:
       - "Where am I?"
       - "What's going on..?"
       - "This world.."
       - "Why do I even exist?"
-    interact:
+    interacted:
       - "Whaaaaa!"
       - "MMmmmmp.."
     attacked:
@@ -386,7 +386,7 @@ messages:
   LavaSlime:
     spawned:
       - "*Blop*?"
-    alive:
+    idle:
       - "*Blop* *blop*"
     attacked:
       - "*Blop* *blop*"
@@ -394,7 +394,7 @@ messages:
   Slime:
     spawned:
       - "*Blop*?"
-    alive:
+    idle:
       - "*Blop* *blop*"
     attacked:
       - "*Blop* *blop*"
@@ -402,7 +402,7 @@ messages:
   Skeleton:
     spawned:
       - "I'm very near..."
-    alive:
+    idle:
       - "I will shoot someone tonight."
       - "*Rattle* *Rattle*"
       - "*Clink*"
@@ -426,7 +426,7 @@ messages:
   Silverfish:
     spawned:
       - "Nsssta?"
-    alive:
+    idle:
       - "Nsst!  Nsssst!"
     attacked:
       - "Nsst!  Nsssst!"
@@ -435,7 +435,7 @@ messages:
   Spider:
     spawned:
       - "NsssSssssSSsta?"
-    alive:
+    idle:
       - "Nsssssst!"
     attacked:
       - "Nsssssst!"
@@ -444,7 +444,7 @@ messages:
   CaveSpider:
     spawned:
       - "NsssSssssSSsta?"
-    alive:
+    idle:
       - "Nsssssst!"
     attacked:
       - "Nsssssst!"
@@ -453,12 +453,12 @@ messages:
   Zombie:
     spawned:
       - "Uhhhhh-UHHHHHH?"
-    alive:
+    idle:
       - "Uhhh... Brains..."
       - "Uhhhhhhh... Uh! Uh..."
       - "Brains... brains..."
       - "Muh... Uh... eh... Brains?"
-    interact:
+    interacted:
       - "Uh?! Brains..."
       - "Guh, ugh... huu...."
       - "Brains?... Uh! Uhuuhhuu!"
@@ -481,11 +481,11 @@ messages:
   EnderDragon:
     spawned:
       - "Every Soul and World will belong to me!"
-    alive:
+    idle:
       - "You know nothing.. Nothing!"
       - "The Ender is here!"
       - "I will consume all!"
-    interact:
+    interacted:
       - "Foolish creature."
     attacked:
       - "You dare attack me?!"
@@ -495,12 +495,12 @@ messages:
   Giant:
     spawned:
       - "SMASH!!"
-    alive:
+    idle:
       - "Uhhh... Smash..."
       - "Uhhhhhhh... Uh! Uh..."
       - "Smash... Smash..."
       - "Muh... Uh... eh... Smash?"
-    interact:
+    interacted:
       - "Uh?! Brains..."
       - "Guh, ugh... huu...."
       - "Smash?... Uh! Uhuuhhuu!"

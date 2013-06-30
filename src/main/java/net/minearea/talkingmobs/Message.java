@@ -20,15 +20,15 @@ public class Message
 	public enum EventType
 	{
 		/**
-		 * Mob is alive (Currently unused)
-		 */
-		alive,
-		/**
 		 * Mob has been attacked by a player
 		 */
 		attacked,
 		/**
-		 * Player interacted with the mob (Currently unused)
+		 * Mob is idle (Is just standing/walking/running around) -> Unused
+		 */
+		idle,
+		/**
+		 * Player interacted with the mob (Right clicked on mob)
 		 */
 		interacted,
 		/**
@@ -36,9 +36,9 @@ public class Message
 		 */
 		killed,
 		/**
-		 * Mob has been spawned
+		 * Mob has been spawned (Currently only mob spawner or egg)
 		 */
-		spawn
+		spawned
 	}
 
 	/**
@@ -64,18 +64,22 @@ public class Message
 		{
 			Random randomGenerator = new Random();
 
-			String message = plugin.getConfig().getString("messageformat." + eventType.toString());
+			String message = plugin.getConfig().getString("messageFormat." + eventType.toString());
 
 			if (message == null)
 			{
 				message = "[&a%mobname%&r] %message%";
-				plugin.getLogger().log(Level.WARNING, "Message format for event type '{0}' not defined!", eventType.toString());
+				plugin.getLogger().log(Level.WARNING, "Message format for event type ''{0}'' not defined!", eventType.toString());
 			}
 
 			message = message.replaceAll("%message%", messages.get(randomGenerator.nextInt(messages.size())));
 			message = message.replaceAll("%mobname%", mob.getType().getName());
 
 			return message;
+		}
+		else
+		{
+			plugin.getLogger().log(Level.WARNING, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mob.getType().getName()});
 		}
 
 		return null;

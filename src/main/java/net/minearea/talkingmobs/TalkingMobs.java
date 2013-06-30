@@ -17,7 +17,8 @@ public final class TalkingMobs extends JavaPlugin
 	@Override
 	public void onEnable()
 	{
-		this.saveDefaultConfig();
+		getConfig().options().copyDefaults(true);
+		saveConfig();
 
 		PluginManager pluginManager = getServer().getPluginManager();
 		pluginManager.registerEvents(new EventListener(this, message), this);
@@ -33,9 +34,11 @@ public final class TalkingMobs extends JavaPlugin
 				switch (args[0])
 				{
 					case "help":// TODO: Messages are in wrong order
+						List<String> lines = new ArrayList<>();
+
 						if (sender.hasPermission("talkingmobs.reload"))
 						{
-							sender.sendMessage("/talkingmobs reload - Reload the configuration");
+							lines.add("/talkingmobs reload - Reload the configuration");
 						}
 
 						List<String> eventTypes = new ArrayList<>();
@@ -44,9 +47,11 @@ public final class TalkingMobs extends JavaPlugin
 							eventTypes.add(eventType.toString());
 						}
 
-						sender.sendMessage("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
-						sender.sendMessage("");
-						sender.sendMessage("Message types: " + StringUtils.join(eventTypes, ", "));
+						lines.add("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
+						lines.add("");
+						lines.add("Message types: " + StringUtils.join(eventTypes, ", "));
+
+						sender.sendMessage(lines.toArray(new String[0]));
 
 						return true;
 					case "reload":
