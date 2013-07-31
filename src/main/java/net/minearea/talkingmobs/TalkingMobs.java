@@ -1,7 +1,5 @@
 package net.minearea.talkingmobs;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,6 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class TalkingMobs extends JavaPlugin
 {
@@ -21,7 +22,7 @@ public final class TalkingMobs extends JavaPlugin
 		saveConfig();
 
 		PluginManager pluginManager = getServer().getPluginManager();
-		pluginManager.registerEvents(new EventListener(this, message), this);
+		pluginManager.registerEvents(new EventListener(message), this);
 	}
 
 	@Override
@@ -42,7 +43,7 @@ public final class TalkingMobs extends JavaPlugin
 						}
 
 						List<String> eventTypes = new ArrayList<>();
-						for (Message.EventType eventType: Message.EventType.values())
+						for (Message.EventType eventType : Message.EventType.values())
 						{
 							eventTypes.add(eventType.toString());
 						}

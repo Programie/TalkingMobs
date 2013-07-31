@@ -13,19 +13,17 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 /**
  * Class providing all event listeners required for the plugin
  */
-public class EventListener implements Listener
+class EventListener implements Listener
 {
-	private final TalkingMobs plugin;
 	private final Message message;
 
 	/**
 	 * Constructor of the class
-	 * @param pluginInstance The instance of this plugin (Instance of the TalkingMobs class)
+	 *
 	 * @param messageInstance The instance of the Message class
 	 */
-	public EventListener(TalkingMobs pluginInstance, Message messageInstance)
+	public EventListener(Message messageInstance)
 	{
-		plugin = pluginInstance;
 		message = messageInstance;
 	}
 

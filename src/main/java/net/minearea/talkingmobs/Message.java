@@ -1,11 +1,12 @@
 package net.minearea.talkingmobs;
 
-import java.util.List;
-import java.util.Random;
-import java.util.logging.Level;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+
+import java.util.List;
+import java.util.Random;
+import java.util.logging.Level;
 
 /**
  * Class providing methods to send mob messages to players
@@ -43,6 +44,7 @@ public class Message
 
 	/**
 	 * Initialize the message class
+	 *
 	 * @param pluginInstance The instance of this plugin ('this' in TalkingMobs class)
 	 */
 	public Message(TalkingMobs pluginInstance)
@@ -52,8 +54,10 @@ public class Message
 
 	/**
 	 * Get a random message for the specified mob and event type
-	 * @param mob The entity of the mob for which the message should be fetched
+	 *
+	 * @param mob       The entity of the mob for which the message should be fetched
 	 * @param eventType The event type of the message
+	 *
 	 * @return A string containing the message
 	 */
 	private String getMessage(Entity mob, EventType eventType)
@@ -87,7 +91,9 @@ public class Message
 
 	/**
 	 * Check whether the player has the permission to receive mob messages
+	 *
 	 * @param player The player which should be checked
+	 *
 	 * @return True if the player has the permission, false otherwise
 	 */
 	private boolean isAllowed(Player player)
@@ -97,8 +103,10 @@ public class Message
 
 	/**
 	 * Check if talking mobs of the specified message type is enabled for the specified player
-	 * @param player The player for which the state should be checked
+	 *
+	 * @param player    The player for which the state should be checked
 	 * @param eventType The message type which should be checked
+	 *
 	 * @return True if talking mobs of the specified type is enabled, false otherwise
 	 */
 	public boolean isEnabled(Player player, EventType eventType)
@@ -116,7 +124,9 @@ public class Message
 
 	/**
 	 * Check if talking mobs is enabled for the specified player
+	 *
 	 * @param player The player for which the state should be checked
+	 *
 	 * @return True if talking mobs is enabled, false otherwise
 	 */
 	public boolean isEnabled(Player player)
@@ -127,7 +137,8 @@ public class Message
 	/**
 	 * Format the message and send it to the player
 	 * Formatting includes replacing %player% with the name of the player and translating color codes.
-	 * @param player The player which should receive the message
+	 *
+	 * @param player  The player which should receive the message
 	 * @param message The message to send
 	 */
 	private void sendFormattedMessage(Player player, String message)
@@ -139,8 +150,9 @@ public class Message
 
 	/**
 	 * Send a mob message to the player
-	 * @param mob The mob which sends the message
-	 * @param player The player which should receive the message
+	 *
+	 * @param mob       The mob which sends the message
+	 * @param player    The player which should receive the message
 	 * @param eventType The event type
 	 */
 	public void sendMessage(Entity mob, Player player, EventType eventType)
@@ -157,7 +169,8 @@ public class Message
 
 	/**
 	 * Send a mob message to all players
-	 * @param mob The mob which sends the message
+	 *
+	 * @param mob       The mob which sends the message
 	 * @param eventType The event type
 	 */
 	public void sendMessage(Entity mob, EventType eventType)
@@ -165,7 +178,7 @@ public class Message
 		String message = getMessage(mob, eventType);
 		if (message != null)
 		{
-			for (Player player: plugin.getServer().getOnlinePlayers())
+			for (Player player : plugin.getServer().getOnlinePlayers())
 			{
 				if (isAllowed(player) && isEnabled(player, eventType))
 				{
@@ -177,9 +190,10 @@ public class Message
 
 	/**
 	 * Enable or disable talking mobs of the specified message type for the specified player
-	 * @param player The player for which the state should be changed
-	 * @param messageType The message type of which the state should be set
-	 * @param state The new state
+	 *
+	 * @param player    The player for which the state should be changed
+	 * @param eventType The event type of which the state should be set
+	 * @param state     The new state
 	 */
 	public void setEnabled(Player player, EventType eventType, Boolean state)
 	{
@@ -191,14 +205,15 @@ public class Message
 
 	/**
 	 * Enable or disable talking mobs for the specified player
+	 *
 	 * @param player The player for which the state should be changed
-	 * @param state The new state
+	 * @param state  The new state
 	 */
 	public void setEnabled(Player player, Boolean state)
 	{
 		plugin.getConfig().set("players." + player.getName() + ".enabled.all", state);
 
-		for (EventType eventType: EventType.values())
+		for (EventType eventType : EventType.values())
 		{
 			plugin.getConfig().set("players." + player.getName() + ".enabled." + eventType.toString(), state);
 		}

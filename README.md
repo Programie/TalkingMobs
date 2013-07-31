@@ -1,41 +1,36 @@
-TalkingMobs
-===========
+# TalkingMobs
 
 A Bukkit plugin which let mobs talk to the player
 
 
-Installation
-============
+## Installation
 
-Currently you have to build the project using maven to get the jar file (See section *Build*).
+You can get latest jar file from [bukkit.org](http://dev.bukkit.org/bukkit-plugins/talkingmobs).
 
-A working jar file will be provided soon.
+You may also check out the project from the repository and build it yourself (See Build section).
 
 
-Build
-=====
+## Build
 
 You can build the project in the following 2 steps:
 
-   * Check out the repository
-   * Build the jar file using maven: *mvn clean install*
+ * Check out the repository
+ * Build the jar file using maven: *mvn clean package*
 
-Note: Maven is required to build the project
+**Note:** JDK 1.7 and Maven is required to build the project!
 
 
-Permissions
-===========
+## Permissions
 
 TalkingMobs knows the following permissions:
 
-   * talkingmobs - Required to access the /talkingmobs command (Default: everyone)
-   * talkingmobs.receive - Allow to receive messages from mobs (Default: everyone)
-   * talkingmobs.reload - Allow to reload the configuration (Default: op)
-   * talkingmobs.* - Allow access to all features (Default: op)
+ * talkingmobs - Required to access the /talkingmobs command (Default: everyone)
+ * talkingmobs.receive - Allow to receive messages from mobs (Default: everyone)
+ * talkingmobs.reload - Allow to reload the configuration (Default: op)
+ * talkingmobs.* - Allow access to all features (Default: op)
 
 
-The /talkingmobs command
-========================
+## The /talkingmobs command
 
 The /talkingmobs command is the one and only command provided by this plugin.
 
@@ -43,6 +38,6 @@ The /talkingmobs command is the one and only command provided by this plugin.
 
 The following sub commands are currently available:
 
-   * help - Show the help of the plugin
-   * reload - Reload the configuration
-   * toggle [type] - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified event type)
+ * help - Show the help of the plugin
+ * reload - Reload the configuration
+ * toggle [type] - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified event type)
