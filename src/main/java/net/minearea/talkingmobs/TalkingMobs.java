@@ -7,7 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.Metrics;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,16 @@ public final class TalkingMobs extends JavaPlugin
 
 		PluginManager pluginManager = getServer().getPluginManager();
 		pluginManager.registerEvents(new EventListener(message), this);
+
+		try
+		{
+			Metrics metrics = new Metrics(this);
+			metrics.start();
+		}
+		catch (IOException exception)
+		{
+			// Failed to submit the stats :-(
+		}
 	}
 
 	@Override
@@ -42,15 +54,18 @@ public final class TalkingMobs extends JavaPlugin
 							lines.add("/talkingmobs reload - Reload the configuration");
 						}
 
-						List<String> eventTypes = new ArrayList<>();
-						for (Message.EventType eventType : Message.EventType.values())
+						if (sender instanceof Player)
 						{
-							eventTypes.add(eventType.toString());
-						}
+							List<String> eventTypes = new ArrayList<>();
+							for (Message.EventType eventType : Message.EventType.values())
+							{
+								eventTypes.add(eventType.toString());
+							}
 
-						lines.add("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
-						lines.add("");
-						lines.add("Message types: " + StringUtils.join(eventTypes, ", "));
+							lines.add("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
+							lines.add("");
+							lines.add("Message types: " + StringUtils.join(eventTypes, ", "));
+						}
 
 						sender.sendMessage(lines.toArray(new String[0]));
 
