@@ -1,6 +1,7 @@
 package net.minearea.talkingmobs;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
@@ -73,7 +74,7 @@ public class Message
 			if (message == null)
 			{
 				message = "[&a%mobname%&r] %message%";
-				plugin.getLogger().log(Level.WARNING, "Message format for event type ''{0}'' not defined!", eventType.toString());
+				plugin.getLogger().log(Level.INFO, "Message format for event type ''{0}'' not defined!", eventType.toString());
 			}
 
 			message = message.replaceAll("%message%", messages.get(randomGenerator.nextInt(messages.size())));
@@ -83,7 +84,7 @@ public class Message
 		}
 		else
 		{
-			plugin.getLogger().log(Level.WARNING, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mob.getType().getName()});
+			plugin.getLogger().log(Level.INFO, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mob.getType().getName()});
 		}
 
 		return null;
@@ -157,12 +158,24 @@ public class Message
 	 */
 	public void sendMessage(Entity mob, Player player, EventType eventType)
 	{
+		double maxDistance = plugin.getConfig().getDouble("maxDistance");
 		if (isAllowed(player) && isEnabled(player, eventType))
 		{
 			String message = getMessage(mob, eventType);
 			if (message != null)
 			{
-				sendFormattedMessage(player, message);
+				if (maxDistance > 0)
+				{
+					double distance = player.getLocation().distance(mob.getLocation());
+					if (distance != Double.NaN && distance <= maxDistance)
+					{
+						sendFormattedMessage(player, message);
+					}
+				}
+				else
+				{
+					sendFormattedMessage(player, message);
+				}
 			}
 		}
 	}
@@ -175,6 +188,8 @@ public class Message
 	 */
 	public void sendMessage(Entity mob, EventType eventType)
 	{
+		double maxDistance = plugin.getConfig().getDouble("maxDistance");
+		Location mobLocation = mob.getLocation();
 		String message = getMessage(mob, eventType);
 		if (message != null)
 		{
@@ -182,7 +197,18 @@ public class Message
 			{
 				if (isAllowed(player) && isEnabled(player, eventType))
 				{
-					sendFormattedMessage(player, message);
+					if (maxDistance > 0)
+					{
+						double distance = player.getLocation().distance(mobLocation);
+						if (distance != Double.NaN && distance <= maxDistance)
+						{
+							sendFormattedMessage(player, message);
+						}
+					}
+					else
+					{
+						sendFormattedMessage(player, message);
+					}
 				}
 			}
 		}

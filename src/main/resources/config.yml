@@ -1,9 +1,20 @@
+# The maximum distance between a mob and a player (0 = any)
+# Only players in this range to the talking mob will see the message
+maxDistance: 0
+
+# How to format the messages
+# %mobname% is replaced with the name of the talking mob
+# %message% is replaced with the message
 messageFormat:
   idle: "[&a%mobname%&r] %message%"
   attacked: "[&a%mobname%&r] %message%"
   interacted: "[&a%mobname%&r] %message%"
   killed: "[&a%mobname%&r] &c%message%"
   spawned: "[&a%mobname%&r] %message%"
+
+# Messages for each mob
+# For each mob multiple message types can be defined (attacked, idle, killed and spawned)
+# Each message type contains a list of messages which are picked randomly
 messages:
   SnowMan:
     spawned:
