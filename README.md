@@ -1,6 +1,6 @@
 # TalkingMobs
 
-A Bukkit plugin which let mobs talk to the player
+A Minecraft Bukkit plugin which let mobs talk to the player
 
 
 ## Installation
