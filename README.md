@@ -12,6 +12,8 @@ You may also check out the project from the repository and build it yourself (Se
 
 ## Build
 
+[![Build Status](https://travis-ci.org/Programie/TalkingMobs.png?branch=master)](https://travis-ci.org/Programie/TalkingMobs)
+
 You can build the project in the following 2 steps:
 
  * Check out the repository
