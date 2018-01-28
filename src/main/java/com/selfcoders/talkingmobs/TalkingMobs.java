@@ -1,4 +1,4 @@
-package net.minearea.talkingmobs;
+package com.selfcoders.talkingmobs;
 
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;

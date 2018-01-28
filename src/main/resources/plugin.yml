@@ -2,8 +2,8 @@ name: TalkingMobs
 version: 1.1
 description: 'Let mobs talk to players on events like damage or death'
 author: Programie
-website: http://minearea.net
-main: net.minearea.talkingmobs.TalkingMobs
+website: https://selfcoders.com
+main: com.selfcoders.talkingmobs.TalkingMobs
 commands:
   talkingmobs:
     description: 'Command for actions of Talking Mobs'

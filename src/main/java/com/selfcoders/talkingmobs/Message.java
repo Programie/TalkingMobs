@@ -1,4 +1,4 @@
-package net.minearea.talkingmobs;
+package com.selfcoders.talkingmobs;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
