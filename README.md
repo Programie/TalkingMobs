@@ -1,5 +1,7 @@
 # TalkingMobs
 
+![](screenshot.png)
+
 A Minecraft Bukkit plugin which let mobs talk to the player
 
 
