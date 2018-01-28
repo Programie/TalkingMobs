@@ -3,6 +3,7 @@ package net.minearea.talkingmobs;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -140,6 +141,14 @@ public class Message {
      * @param eventType The event type
      */
     public void sendMessage(Entity mob, Player player, EventType eventType) {
+        if (mob instanceof Player) {
+            return;
+        }
+
+        if (!(mob instanceof LivingEntity)) {
+            return;
+        }
+
         double maxDistance = plugin.getConfig().getDouble("maxDistance");
         if (isAllowed(player) && isEnabled(player, eventType)) {
             String message = getMessage(mob, eventType);
@@ -163,6 +172,14 @@ public class Message {
      * @param eventType The event type
      */
     public void sendMessage(Entity mob, EventType eventType) {
+        if (mob instanceof Player) {
+            return;
+        }
+
+        if (!(mob instanceof LivingEntity)) {
+            return;
+        }
+
         double maxDistance = plugin.getConfig().getDouble("maxDistance");
         Location mobLocation = mob.getLocation();
         String message = getMessage(mob, eventType);
