@@ -68,7 +68,7 @@ messages:
     killed:
       - "You guys are so mean.. gawd."
       - "Moo-"
-  mushroomcow:
+  mooshroom:
     spawned:
       - "Moooo?"
       - "Here I am!"
@@ -86,7 +86,7 @@ messages:
     killed:
       - "You guys are so mean.. gawd."
       - "Moo-"
-  ozelot:
+  ocelot:
     spawned:
       - "Meow?"
       - "Purr.. purr.."
@@ -104,7 +104,7 @@ messages:
     killed:
       - "Hiss! Noooooo..."
       - "Meow-"
-  villagergolem:
+  villager_golem:
     spawned:
       - "*I shall protect thee!*"
     idle: 
@@ -252,7 +252,7 @@ messages:
       - "Grrrrrrrrr!!"
     killed:
       - "Gah!!"      
-  pigzombie:
+  zombie_pigman:
     spawned:
       - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
     idle:
@@ -380,7 +380,7 @@ messages:
       - "Nsssssst!"
     killed:
       - "Nsssta!!"
-  cavespider:
+  cave_spider:
     spawned:
       - "NsssSssssSSsta?"
     idle:
@@ -417,7 +417,7 @@ messages:
       - "Aahuhhhh!"
       - "Ehhhhuhh!!!"
       - "Guuhhh-ehhh basta-Guuhhh!"
-  enderdragon:
+  ender_dragon:
     spawned:
       - "Every Soul and World will belong to me!"
     idle:
