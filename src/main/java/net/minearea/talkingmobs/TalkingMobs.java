@@ -7,9 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mcstats.Metrics;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +21,6 @@ public final class TalkingMobs extends JavaPlugin {
 
         PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new EventListener(message), this);
-
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException exception) {
-            // Failed to submit the stats :-(
-        }
     }
 
     @Override

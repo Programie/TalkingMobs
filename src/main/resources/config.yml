@@ -16,7 +16,7 @@ messageFormat:
 # For each mob multiple message types can be defined (attacked, idle, killed and spawned)
 # Each message type contains a list of messages which are picked randomly
 messages:
-  SnowMan:
+  snowman:
     spawned:
       - "I have been spawned!"
     idle:
@@ -33,7 +33,7 @@ messages:
       - "You Shall Not Pass!"
     killed:
       - "I have failed..."
-  BabyPig:
+  babypig:
     idle:
       - "I like it to poopoo!"
       - "Mommy!"
@@ -45,7 +45,7 @@ messages:
       - "Sqeee!!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  BabyChicken:
+  babychicken:
     idle:
       - "I like it to poopoo!"
       - "Mommy!"
@@ -57,7 +57,7 @@ messages:
       - "Becawk!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  BabyCow:
+  babycow:
     idle:
       - "I like it to poopoo!"
       - "Moommy!"
@@ -69,7 +69,7 @@ messages:
       - "Moohoo!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  BabyMushroomCow:
+  babymushroomcow:
     idle:
       - "I like it to poopoo!"
       - "Moommy!"
@@ -81,7 +81,7 @@ messages:
       - "Moohoo!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  BabySheep:
+  babysheep:
     idle:
       - "I like it to poopoo!"
       - "Mommy!"
@@ -93,7 +93,7 @@ messages:
       - "Maaa!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  BabyOcelot:
+  babyocelot:
     idle:
       - "Meow!"
       - "Mommy!"
@@ -105,7 +105,7 @@ messages:
       - "Hiss!"
     killed: 
       - "Waahh!! I want my Mommy!! gu-"
-  Chicken:
+  chicken:
     spawned:
       - "Bwak-Bwak?"
       - "Here I am!"
@@ -123,7 +123,7 @@ messages:
     killed:
       - "You guys are so mean.. gawd."
       - "Bacaaa-"
-  Cow:
+  cow:
     spawned:
       - "Moooo?"
       - "Here I am!"
@@ -140,7 +140,7 @@ messages:
     killed:
       - "You guys are so mean.. gawd."
       - "Moo-"
-  MushroomCow:
+  mushroomcow:
     spawned:
       - "Moooo?"
       - "Here I am!"
@@ -158,7 +158,7 @@ messages:
     killed:
       - "You guys are so mean.. gawd."
       - "Moo-"
-  Ozelot:
+  ozelot:
     spawned:
       - "Meow?"
       - "Purr.. purr.."
@@ -176,7 +176,7 @@ messages:
     killed:
       - "Hiss! Noooooo..."
       - "Meow-"
-  VillagerGolem:
+  villagergolem:
     spawned:
       - "*I shall protect thee!*"
     idle: 
@@ -191,7 +191,7 @@ messages:
     killed:
       - "*I have failed..*"
       - "*Critical system error*"
-  Pig:
+  pig:
     spawned:
       - "Oink?"
       - "Here I am!"
@@ -220,7 +220,7 @@ messages:
       - "Ah! You got me!"
       - "Hope you enjoy my bacon...."
       - "I was about to share with you the secrets of the Universe!! guuuuhhh!!"
-  Sheep:
+  sheep:
     spawned:
       - "Maahaaa!"
       - "Here I am!"
@@ -237,7 +237,7 @@ messages:
     killed:
       - "MaaaAh! You got me!"
       - "Take my soft fluffy wool."
-  Squid:
+  squid:
     spawned:
       - ":)"
     idle:
@@ -252,7 +252,7 @@ messages:
       - "!"
     killed:
       - "...."
-  Villager:
+  villager:
     spawned:
       - "What the...?!"
       - "Here I am!"
@@ -278,7 +278,7 @@ messages:
       - "Damnit!"
       - "S*** I left the stove on!"
       - "I have been slain!"
-  Enderman:
+  enderman:
     spawned:
       - "Why am I part of this world?"
     idle:
@@ -298,7 +298,7 @@ messages:
     killed:
       - "Curse you %player%!"
       - "Gah!!" 
-  Wolf:
+  wolf:
     spawned:
       - "Arrrruuuuuu!"
       - "Woof!"
@@ -324,7 +324,7 @@ messages:
       - "Grrrrrrrrr!!"
     killed:
       - "Gah!!"      
-  PigZombie:
+  pigzombie:
     spawned:
       - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
     idle:
@@ -336,7 +336,7 @@ messages:
       - "OOouuaah! OOouuaah!"
     killed:
       - "Gah!!"   
-  Blaze:
+  blaze:
     spawned:
       - "hm?"
       - "A new existance"
@@ -360,7 +360,7 @@ messages:
       - "This.. is.. not the end.."
       - "You will die soon enough mortal"
       - "Impossible..."
-  Creeper:
+  creeper:
     spawned:
       - "Sssssst?"
     idle:
@@ -372,7 +372,7 @@ messages:
       - "SSSssss.... SSssss!!"
     killed:
       - "...!"
-  Ghast:
+  ghast:
     spawned:
       - "You have Summoned me?"
     idle:
@@ -394,7 +394,7 @@ messages:
       - "This.. is.. not the end.."
       - "You will die soon enough mortal"
       - "Impossible..."
-  LavaSlime:
+  lavaslime:
     spawned:
       - "*Blop*?"
     idle:
@@ -402,7 +402,7 @@ messages:
     attacked:
       - "*Blop* *blop*"
       - "Attack my borthers!"
-  Slime:
+  slime:
     spawned:
       - "*Blop*?"
     idle:
@@ -410,7 +410,7 @@ messages:
     attacked:
       - "*Blop* *blop*"
       - "Attack my borthers!"
-  Skeleton:
+  skeleton:
     spawned:
       - "I'm very near..."
     idle:
@@ -434,7 +434,7 @@ messages:
       - "This is Impossible!!"
       - "This is not the last time you will see me!"
       - "Ugh! You big smelly willy!"
-  Silverfish:
+  silverfish:
     spawned:
       - "Nsssta?"
     idle:
@@ -443,7 +443,7 @@ messages:
       - "Nsst!  Nsssst!"
     killed:
       - "Nsssta!!"
-  Spider:
+  spider:
     spawned:
       - "NsssSssssSSsta?"
     idle:
@@ -452,7 +452,7 @@ messages:
       - "Nsssssst!"
     killed:
       - "Nsssta!!"
-  CaveSpider:
+  cavespider:
     spawned:
       - "NsssSssssSSsta?"
     idle:
@@ -461,7 +461,7 @@ messages:
       - "Nsssssst!"
     killed:
       - "Nsssta!!"
-  Zombie:
+  zombie:
     spawned:
       - "Uhhhhh-UHHHHHH?"
     idle:
@@ -489,7 +489,7 @@ messages:
       - "Aahuhhhh!"
       - "Ehhhhuhh!!!"
       - "Guuhhh-ehhh basta-Guuhhh!"
-  EnderDragon:
+  enderdragon:
     spawned:
       - "Every Soul and World will belong to me!"
     idle:
@@ -503,7 +503,7 @@ messages:
       - "I'm unstopppable you fool!"
     killed:
       - "How can this be?! This is IMPOSSIIIIIIBLE!!!!"   
-  Giant:
+  giant:
     spawned:
       - "SMASH!!"
     idle:
