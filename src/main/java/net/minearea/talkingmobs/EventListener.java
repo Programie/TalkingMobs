@@ -48,10 +48,10 @@ class EventListener implements Listener {
     @EventHandler
     public void onEntityKilled(EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
-        Entity killer = entity.getKiller();
+        Player killer = entity.getKiller();
 
-        if (killer instanceof Player) {
-            message.sendMessage(entity, (Player) killer, Message.EventType.killed);
+        if (killer != null) {
+            message.sendMessage(entity, killer, Message.EventType.killed);
         }
     }
 
