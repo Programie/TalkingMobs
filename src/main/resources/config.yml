@@ -322,14 +322,6 @@ messages:
       - "This.. is.. not the end.."
       - "You will die soon enough mortal"
       - "Impossible..."
-  lavaslime:
-    spawned:
-      - "*Blop*?"
-    idle:
-      - "*Blop* *blop*"
-    attacked:
-      - "*Blop* *blop*"
-      - "Attack my borthers!"
   slime:
     spawned:
       - "*Blop*?"
