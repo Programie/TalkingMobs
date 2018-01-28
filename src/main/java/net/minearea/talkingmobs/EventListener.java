@@ -21,7 +21,7 @@ class EventListener implements Listener {
      *
      * @param messageInstance The instance of the Message class
      */
-    public EventListener(Message messageInstance) {
+    EventListener(Message messageInstance) {
         message = messageInstance;
     }
 

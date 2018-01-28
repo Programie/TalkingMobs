@@ -47,7 +47,7 @@ public class Message {
      *
      * @param pluginInstance The instance of this plugin ('this' in TalkingMobs class)
      */
-    public Message(TalkingMobs pluginInstance) {
+    Message(TalkingMobs pluginInstance) {
         plugin = pluginInstance;
     }
 
