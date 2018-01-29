@@ -30,7 +30,7 @@ class EventListener implements Listener {
         Entity entity = event.getEntity();
         CreatureSpawnEvent.SpawnReason spawnReason = event.getSpawnReason();
 
-        if (spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER || spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG) {
+        if (spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER || spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG || spawnReason == CreatureSpawnEvent.SpawnReason.CUSTOM) {
             message.sendMessage(entity, Message.EventType.spawned);
         }
     }
