@@ -2,6 +2,18 @@
 # Only players in this range to the talking mob will see the message
 maxDistance: 0
 
+# Define which events should show messages
+# Everything except for "spawned" is a boolean (true or false).
+# The "spawned" event expects a list of spawn reasons (see https://jd.bukkit.org/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html for possible spawn reasons).
+events:
+  attacked: true
+  interacted: true
+  killed: true
+  spawned:
+  - CUSTOM
+  - SPAWNER
+  - SPAWNER_EGG
+
 # How to format the messages
 # %mobname% is replaced with the name of the talking mob
 # %message% is replaced with the message

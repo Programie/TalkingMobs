@@ -20,7 +20,7 @@ public final class TalkingMobs extends JavaPlugin {
         saveConfig();
 
         PluginManager pluginManager = getServer().getPluginManager();
-        pluginManager.registerEvents(new EventListener(message), this);
+        pluginManager.registerEvents(new EventListener(message, this), this);
     }
 
     @Override

@@ -10,19 +10,23 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
+import java.util.List;
+
 /**
  * Class providing all event listeners required for the plugin
  */
 class EventListener implements Listener {
     private final Message message;
+    private final TalkingMobs plugin;
 
     /**
      * Constructor of the class
      *
      * @param messageInstance The instance of the Message class
      */
-    EventListener(Message messageInstance) {
+    EventListener(Message messageInstance, TalkingMobs pluginInstance) {
         message = messageInstance;
+        plugin = pluginInstance;
     }
 
     @EventHandler
@@ -30,13 +34,19 @@ class EventListener implements Listener {
         Entity entity = event.getEntity();
         CreatureSpawnEvent.SpawnReason spawnReason = event.getSpawnReason();
 
-        if (spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER || spawnReason == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG || spawnReason == CreatureSpawnEvent.SpawnReason.CUSTOM) {
+        List<String> allowedSpawnReasons = plugin.getConfig().getStringList("events.spawned");
+
+        if (allowedSpawnReasons.contains(spawnReason.name())) {
             message.sendMessage(entity, Message.EventType.spawned);
         }
     }
 
     @EventHandler
     public void onEntityAttacked(EntityDamageByEntityEvent event) {
+        if (!plugin.getConfig().getBoolean("events.attacked")) {
+            return;
+        }
+
         Entity damager = event.getDamager();
         Entity entity = event.getEntity();
 
@@ -47,6 +57,10 @@ class EventListener implements Listener {
 
     @EventHandler
     public void onEntityKilled(EntityDeathEvent event) {
+        if (!plugin.getConfig().getBoolean("events.killed")) {
+            return;
+        }
+
         LivingEntity entity = event.getEntity();
         Player killer = entity.getKiller();
 
@@ -57,6 +71,10 @@ class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
+        if (!plugin.getConfig().getBoolean("events.interacted")) {
+            return;
+        }
+
         message.sendMessage(event.getRightClicked(), event.getPlayer(), Message.EventType.interacted);
     }
 }
