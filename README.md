@@ -2,14 +2,14 @@
 
 ![](screenshot.png)
 
-A Minecraft Bukkit plugin which let mobs talk to the player
+A Minecraft Bukkit plugin which lets mobs talk to the player.
 
 
 ## Installation
 
-You can get latest jar file from [bukkit.org](http://dev.bukkit.org/bukkit-plugins/talkingmobs).
+You can get the latest release from [bukkit.org](https://dev.bukkit.org/projects/talkingmobs) or [GitHub](https://github.com/Programie/TalkingMobs/releases/latest).
 
-You may also check out the project from the repository and build it yourself (See Build section).
+You may also check out the project from the repository and build it yourself (See Build section bellow).
 
 
 ## Build
@@ -21,7 +21,7 @@ You can build the project in the following 2 steps:
  * Check out the repository
  * Build the jar file using maven: *mvn clean package*
 
-**Note:** JDK 1.7 and Maven is required to build the project!
+**Note:** JDK 1.8 and Maven is required to build the project!
 
 
 ## Permissions
