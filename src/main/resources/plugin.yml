@@ -1,5 +1,5 @@
 name: TalkingMobs
-version: 1.1
+version: ${project.version}
 description: 'Let mobs talk to players on events like damage or death'
 author: Programie
 website: https://selfcoders.com
