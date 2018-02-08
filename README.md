@@ -23,7 +23,7 @@ You can build the project in the following 2 steps:
  * Check out the repository
  * Build the jar file using maven: *mvn clean package*
 
-**Note:** JDK 1.8 and Maven is required to build the project!
+**Note:** JDK 1.7 and Maven is required to build the project!
 
 
 ## Permissions
