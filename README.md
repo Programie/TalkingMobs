@@ -1,8 +1,12 @@
 # TalkingMobs
 
-![](screenshot.png)
-
 A Minecraft Bukkit plugin which lets mobs talk to the player.
+
+[![Build Status](https://travis-ci.org/Programie/TalkingMobs.png?branch=master)](https://travis-ci.org/Programie/TalkingMobs)
+[![Issues](https://img.shields.io/github/issues/Programie/TalkingMobs.svg)](https://github.com/Programie/TalkingMobs/issues)
+[![Release](https://img.shields.io/github/release/Programie/TalkingMobs.svg)](https://github.com/Programie/TalkingMobs/releases/latest)
+
+![](screenshot.png)
 
 
 ## Installation
@@ -13,8 +17,6 @@ You may also check out the project from the repository and build it yourself (Se
 
 
 ## Build
-
-[![Build Status](https://travis-ci.org/Programie/TalkingMobs.png?branch=master)](https://travis-ci.org/Programie/TalkingMobs)
 
 You can build the project in the following 2 steps:
 
