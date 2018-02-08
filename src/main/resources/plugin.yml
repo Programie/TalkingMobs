@@ -1,8 +1,8 @@
 name: TalkingMobs
 version: ${project.version}
-description: 'Let mobs talk to players on events like damage or death'
+description: '${project.description}'
 author: Programie
-website: https://selfcoders.com
+website: ${project.url}
 main: com.selfcoders.talkingmobs.TalkingMobs
 commands:
   talkingmobs:

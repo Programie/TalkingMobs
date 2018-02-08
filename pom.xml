@@ -7,6 +7,7 @@
     <packaging>jar</packaging>
 
     <name>Talking Mobs</name>
+    <description>Let mobs talk to players on events like damage or death</description>
     <url>https://selfcoders.com</url>
 
     <properties>
