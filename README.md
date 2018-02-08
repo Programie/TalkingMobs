@@ -2,7 +2,7 @@
 
 A Minecraft Bukkit plugin which lets mobs talk to the player.
 
-[![Build Status](https://travis-ci.org/Programie/TalkingMobs.png?branch=master)](https://travis-ci.org/Programie/TalkingMobs)
+[![Build Status](https://travis-ci.org/Programie/TalkingMobs.svg?branch=master)](https://travis-ci.org/Programie/TalkingMobs)
 [![Issues](https://img.shields.io/github/issues/Programie/TalkingMobs.svg)](https://github.com/Programie/TalkingMobs/issues)
 [![Release](https://img.shields.io/github/release/Programie/TalkingMobs.svg)](https://github.com/Programie/TalkingMobs/releases/latest)
 
