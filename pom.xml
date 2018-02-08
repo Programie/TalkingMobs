@@ -6,7 +6,7 @@
     <version>1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Talking Mobs</name>
+    <name>TalkingMobs</name>
     <description>Let mobs talk to players on events like damage or death</description>
     <url>https://selfcoders.com</url>
 
@@ -44,6 +44,15 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <finalName>${project.name}</finalName>
                 </configuration>
             </plugin>
         </plugins>
