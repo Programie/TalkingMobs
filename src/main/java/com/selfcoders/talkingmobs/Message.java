@@ -59,7 +59,9 @@ public class Message {
      */
     private String getMessage(Entity mob, EventType eventType) {
         List<String> messages;
-        messages = plugin.getConfig().getStringList("messages." + mob.getType().name() + "." + eventType.toString());
+        String mobTypeName = mob.getType().name().toLowerCase();
+
+        messages = plugin.getConfig().getStringList("messages." + mobTypeName + "." + eventType.toString());
         if (messages.size() > 0) {
             Random randomGenerator = new Random();
 
@@ -71,11 +73,11 @@ public class Message {
             }
 
             message = message.replaceAll("%message%", messages.get(randomGenerator.nextInt(messages.size())));
-            message = message.replaceAll("%mobname%", mob.getType().name());
+            message = message.replaceAll("%mobname%", mobTypeName);
 
             return message;
         } else {
-            plugin.getLogger().log(Level.INFO, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mob.getType().name()});
+            plugin.getLogger().log(Level.INFO, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mobTypeName});
         }
 
         return null;
