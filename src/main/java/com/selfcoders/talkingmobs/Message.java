@@ -1,7 +1,6 @@
 package com.selfcoders.talkingmobs;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -141,28 +140,13 @@ public class Message {
      * @param eventType The event type
      */
     public void sendMessage(Entity mob, Player player, EventType eventType) {
-        if (mob instanceof Player) {
+        String message = getMessage(mob, eventType);
+
+        if (message == null) {
             return;
         }
 
-        if (!(mob instanceof LivingEntity)) {
-            return;
-        }
-
-        double maxDistance = plugin.getConfig().getDouble("maxDistance");
-        if (isAllowed(player) && isEnabled(player, eventType)) {
-            String message = getMessage(mob, eventType);
-            if (message != null) {
-                if (maxDistance > 0) {
-                    double distance = player.getLocation().distance(mob.getLocation());
-                    if (distance != Double.NaN && distance <= maxDistance) {
-                        sendFormattedMessage(player, message);
-                    }
-                } else {
-                    sendFormattedMessage(player, message);
-                }
-            }
-        }
+        sendMessage(mob, player, eventType, message);
     }
 
     /**
@@ -180,22 +164,50 @@ public class Message {
             return;
         }
 
-        double maxDistance = plugin.getConfig().getDouble("maxDistance");
-        Location mobLocation = mob.getLocation();
         String message = getMessage(mob, eventType);
-        if (message != null) {
-            for (Player player : plugin.getServer().getOnlinePlayers()) {
-                if (isAllowed(player) && isEnabled(player, eventType)) {
-                    if (maxDistance > 0) {
-                        double distance = player.getLocation().distance(mobLocation);
-                        if (distance != Double.NaN && distance <= maxDistance) {
-                            sendFormattedMessage(player, message);
-                        }
-                    } else {
-                        sendFormattedMessage(player, message);
-                    }
-                }
+        if (message == null) {
+            return;
+        }
+
+        for (Player player : plugin.getServer().getOnlinePlayers()) {
+            sendMessage(mob, player, eventType, message);
+        }
+    }
+
+    /**
+     * Send the given mob message to the player
+     *
+     * @param mob       The mob which sends the message
+     * @param player    The player which should receive the message
+     * @param eventType The event type
+     * @param message   The message to send
+     */
+    private void sendMessage(Entity mob, Player player, EventType eventType, String message) {
+        if (mob instanceof Player) {
+            return;
+        }
+
+        if (!(mob instanceof LivingEntity)) {
+            return;
+        }
+
+        if (!isAllowed(player)) {
+            return;
+        }
+
+        if (!isEnabled(player, eventType)) {
+            return;
+        }
+
+        double maxDistance = plugin.getConfig().getDouble("maxDistance");
+
+        if (maxDistance > 0) {
+            double distance = player.getLocation().distance(mob.getLocation());
+            if (distance != Double.NaN && distance <= maxDistance) {
+                sendFormattedMessage(player, message);
             }
+        } else {
+            sendFormattedMessage(player, message);
         }
     }
 
