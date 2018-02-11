@@ -38,7 +38,11 @@ public class Message {
         /**
          * Mob has been spawned (Currently only mob spawner or egg)
          */
-        spawned
+        spawned,
+        /**
+         * Mob has been tamed
+         */
+        tamed
     }
 
     /**

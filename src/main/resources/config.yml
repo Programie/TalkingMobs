@@ -13,6 +13,7 @@ events:
   - CUSTOM
   - SPAWNER
   - SPAWNER_EGG
+  tamed: true
 
 # How to format the messages
 # %mobname% is replaced with the name of the talking mob
@@ -23,6 +24,7 @@ messageFormat:
   interacted: "[&a%mobname%&r] %message%"
   killed: "[&a%mobname%&r] &c%message%"
   spawned: "[&a%mobname%&r] %message%"
+  tamed: "[&a%mobname%&r] %message%"
 
 # Messages for each mob
 # For each mob multiple message types can be defined (attacked, idle, killed and spawned)
@@ -30,6 +32,8 @@ messageFormat:
 # The "default" section will be used if the requested mob type does not have the requested message type
 messages:
   default:
+    tamed:
+      - "OK... You are right, I will stick with you"
   snowman:
     spawned:
       - "I have been spawned!"

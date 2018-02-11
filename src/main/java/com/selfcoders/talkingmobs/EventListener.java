@@ -1,5 +1,6 @@
 package com.selfcoders.talkingmobs;
 
+import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -8,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.event.entity.EntityTameEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import java.util.List;
@@ -76,5 +78,22 @@ class EventListener implements Listener {
         }
 
         message.sendMessage(event.getRightClicked(), event.getPlayer(), Message.EventType.interacted);
+    }
+
+    @EventHandler
+    public void onEntityTame(EntityTameEvent event) {
+        if (!plugin.getConfig().getBoolean("events.tamed")) {
+            return;
+        }
+
+        AnimalTamer owner = event.getOwner();
+
+        if (!(owner instanceof Player)) {
+            return;
+        }
+
+        Player player = (Player) owner;
+
+        message.sendMessage(event.getEntity(), player, Message.EventType.tamed);
     }
 }
