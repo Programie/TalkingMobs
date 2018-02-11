@@ -86,6 +86,7 @@ public class Message {
 
             message = message.replaceAll("%message%", messages.get(randomGenerator.nextInt(messages.size())));
             message = message.replaceAll("%mobname%", mobTypeName);
+            message = message.replaceAll("%event%", eventType.name());
 
             return message;
         } else {

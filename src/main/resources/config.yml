@@ -18,6 +18,7 @@ events:
 # How to format the messages
 # %mobname% is replaced with the name of the talking mob
 # %message% is replaced with the message
+# %event% is replaced with the event type (e.g. attacked, interacted, killed, spawned or tamed)
 messageFormat:
   default: "[&a%mobname%&r] %message%"
 #  idle: "[&a%mobname%&r] %message%"
