@@ -27,7 +27,9 @@ messageFormat:
 # Messages for each mob
 # For each mob multiple message types can be defined (attacked, idle, killed and spawned)
 # Each message type contains a list of messages which are picked randomly
+# The "default" section will be used if the requested mob type does not have the requested message type
 messages:
+  default:
   snowman:
     spawned:
       - "I have been spawned!"

@@ -62,6 +62,10 @@ public class Message {
         String mobTypeName = mob.getType().name().toLowerCase();
 
         messages = plugin.getConfig().getStringList("messages." + mobTypeName + "." + eventType.toString());
+        if (messages.size() == 0) {
+            messages = plugin.getConfig().getStringList("messages.default." + eventType.toString());
+        }
+
         if (messages.size() > 0) {
             Random randomGenerator = new Random();
 
