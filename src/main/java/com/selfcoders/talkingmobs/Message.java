@@ -5,6 +5,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
@@ -14,6 +15,7 @@ import java.util.logging.Level;
  */
 public class Message {
     private final TalkingMobs plugin;
+    private HashMap<String, Long> lastMessage = new HashMap<>();
 
     /**
      * Possible event types
@@ -134,6 +136,22 @@ public class Message {
         return plugin.getConfig().getBoolean("players." + player.getName() + ".enabled.all", true);
     }
 
+    private boolean isSpamming(Entity mob, Player player, EventType eventType) {
+        String key = String.valueOf(mob.getEntityId()) + "/" + String.valueOf(player.getEntityId()) + "/" + eventType.name();
+        Long now = System.currentTimeMillis();
+        Long spamTimeout = plugin.getConfig().getLong("spam-timeout");
+
+        Long previousMessage = lastMessage.get(key);
+
+        if (previousMessage == null || now - previousMessage > spamTimeout) {
+            lastMessage.put(key, now);
+            return false;
+        } else {
+            lastMessage.put(key, now);
+            return true;
+        }
+    }
+
     /**
      * Format the message and send it to the player
      * Formatting includes replacing %player% with the name of the player and translating color codes.
@@ -211,6 +229,10 @@ public class Message {
         }
 
         if (!isEnabled(player, eventType)) {
+            return;
+        }
+
+        if (isSpamming(mob, player, eventType)) {
             return;
         }
 

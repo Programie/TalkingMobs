@@ -2,6 +2,9 @@
 # Only players in this range to the talking mob will see the message
 maxDistance: 0
 
+# The time in milliseconds to wait before sending another message for the same mob to the same player for the same event
+spam-timeout: 5000
+
 # Define which events should show messages
 # Everything except for "spawned" is a boolean (true or false).
 # The "spawned" event expects a list of spawn reasons (see https://jd.bukkit.org/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html for possible spawn reasons).
