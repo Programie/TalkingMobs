@@ -76,8 +76,12 @@ public class Message {
             String message = plugin.getConfig().getString("messageFormat." + eventType.toString());
 
             if (message == null) {
-                message = "[&a%mobname%&r] %message%";
-                plugin.getLogger().log(Level.INFO, "Message format for event type ''{0}'' not defined!", eventType.toString());
+                message = plugin.getConfig().getString("messageFormat.default");
+
+                if (message == null) {
+                    message = "[&a%mobname%&r] %message%";
+                    plugin.getLogger().log(Level.INFO, "Message format for event type ''{0}'' not defined!", eventType.toString());
+                }
             }
 
             message = message.replaceAll("%message%", messages.get(randomGenerator.nextInt(messages.size())));

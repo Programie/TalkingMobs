@@ -19,12 +19,13 @@ events:
 # %mobname% is replaced with the name of the talking mob
 # %message% is replaced with the message
 messageFormat:
-  idle: "[&a%mobname%&r] %message%"
-  attacked: "[&a%mobname%&r] %message%"
-  interacted: "[&a%mobname%&r] %message%"
-  killed: "[&a%mobname%&r] &c%message%"
-  spawned: "[&a%mobname%&r] %message%"
-  tamed: "[&a%mobname%&r] %message%"
+  default: "[&a%mobname%&r] %message%"
+#  idle: "[&a%mobname%&r] %message%"
+#  attacked: "[&a%mobname%&r] %message%"
+#  interacted: "[&a%mobname%&r] %message%"
+#  killed: "[&a%mobname%&r] &c%message%"
+#  spawned: "[&a%mobname%&r] %message%"
+#  tamed: "[&a%mobname%&r] %message%"
 
 # Messages for each mob
 # For each mob multiple message types can be defined (attacked, idle, killed and spawned)
