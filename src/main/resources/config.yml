@@ -3,7 +3,7 @@
 maxDistance: 0
 
 # The time in milliseconds to wait before sending another message for the same mob to the same player for the same event
-spam-timeout: 5000
+spam-timeout: 3000
 
 # Define which events should show messages
 # Everything except for "spawned" is a boolean (true or false).
