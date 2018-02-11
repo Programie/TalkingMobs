@@ -122,12 +122,6 @@ class EventListener implements Listener {
                 continue;
             }
 
-            // debug
-            if (!player.getName().equals("Programie") || !livingEntity.getName().equals("Sheep")) {
-                continue;
-            }
-
-            // debug
             if (location.distance(entity.getLocation()) > 10) {
                 continue;
             }
