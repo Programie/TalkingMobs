@@ -1,5 +1,6 @@
 package com.selfcoders.talkingmobs;
 
+import org.bukkit.Location;
 import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -11,6 +12,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityTameEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.util.Vector;
 
 import java.util.List;
 
@@ -95,5 +98,63 @@ class EventListener implements Listener {
         Player player = (Player) owner;
 
         message.sendMessage(event.getEntity(), player, Message.EventType.tamed);
+    }
+
+    @EventHandler
+    public void onPlayerMove(PlayerMoveEvent event) {
+        if (!plugin.getConfig().getBoolean("events.looking")) {
+            return;
+        }
+
+        Location location = event.getTo().clone();
+        Player player = event.getPlayer();
+
+        List<Entity> nearbyEntities = event.getPlayer().getNearbyEntities(location.getX(), location.getY(), location.getZ());
+
+        for (Entity entity : nearbyEntities) {
+            if (!(entity instanceof LivingEntity)) {
+                continue;
+            }
+
+            LivingEntity livingEntity = (LivingEntity) entity;
+
+            if (!livingEntity.hasLineOfSight(player)) {
+                continue;
+            }
+
+            // debug
+            if (!player.getName().equals("Programie") || !livingEntity.getName().equals("Sheep")) {
+                continue;
+            }
+
+            // debug
+            if (location.distance(entity.getLocation()) > 10) {
+                continue;
+            }
+
+            if (isEntityLookingAtEntity(livingEntity, player) && isEntityLookingAtEntity(player, livingEntity)) {
+                onEntityFacingPlayer(livingEntity, player);
+            }
+        }
+    }
+
+    private void onEntityFacingPlayer(LivingEntity entity, Player player) {
+        message.sendMessage(entity, player, Message.EventType.looking);
+    }
+
+    /**
+     * Check whether the entity looks at the other entity
+     * Thanks to Mr.Midnight (https://www.spigotmc.org/threads/how-to-detect-an-entity-the-player-is-looking-at.139310/#post-1476341)
+     *
+     * @param entity      The entity
+     * @param otherEntity The other entity
+     * @return Whether the entity looks at the other entity
+     */
+    private boolean isEntityLookingAtEntity(LivingEntity entity, LivingEntity otherEntity) {
+        Location eye = entity.getEyeLocation();
+        Vector toEntity = otherEntity.getEyeLocation().toVector().subtract(eye.toVector());
+        double dot = toEntity.normalize().dot(eye.getDirection());
+
+        return dot > 0.99D;
     }
 }

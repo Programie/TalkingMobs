@@ -38,6 +38,10 @@ public class Message {
          */
         killed,
         /**
+         * Mob is looking at the player (and player is looking at the mob)
+         */
+        looking,
+        /**
          * Mob has been spawned (Currently only mob spawner or egg)
          */
         spawned,

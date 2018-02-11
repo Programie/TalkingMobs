@@ -12,6 +12,7 @@ events:
   attacked: true
   interacted: true
   killed: true
+  looking: true
   spawned:
   - CUSTOM
   - SPAWNER
@@ -24,15 +25,16 @@ events:
 # %event% is replaced with the event type (e.g. attacked, interacted, killed, spawned or tamed)
 messageFormat:
   default: "[&a%mobname%&r] %message%"
-#  idle: "[&a%mobname%&r] %message%"
+#  looking: "[&a%mobname%&r] %message%"
 #  attacked: "[&a%mobname%&r] %message%"
 #  interacted: "[&a%mobname%&r] %message%"
 #  killed: "[&a%mobname%&r] &c%message%"
+#  looking: "[&a%mobname%&r] &c%message%"
 #  spawned: "[&a%mobname%&r] %message%"
 #  tamed: "[&a%mobname%&r] %message%"
 
 # Messages for each mob
-# For each mob multiple message types can be defined (attacked, idle, killed and spawned)
+# For each mob multiple message types can be defined (attacked, looking, killed and spawned)
 # Each message type contains a list of messages which are picked randomly
 # The "default" section will be used if the requested mob type does not have the requested message type
 messages:
@@ -42,7 +44,7 @@ messages:
   snowman:
     spawned:
       - "I have been spawned!"
-    idle:
+    looking:
       - "A man's feet should be planted in his country, but his eyes should survey the world."
       - "Wine makes a man more pleased with himself; I do not say that it makes him more pleasing to others."
       - "You can fool too many of the people too much of the time."
@@ -64,7 +66,7 @@ messages:
       - "I'm coming!"
     interacted:
       - "Bwak Bwak!!"
-    idle: 
+    looking:
       - "Bwak!"
       - "Bwak! Bwaaak!"
       - "Quack, I mean Bwak!"
@@ -80,7 +82,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    idle: 
+    looking:
       - "Moo"
       - "Moooooo!"
     interacted:
@@ -97,7 +99,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm comingg!"
-    idle: 
+    looking:
       - "Moo"
       - "Moooooo!"
     interacted:
@@ -115,7 +117,7 @@ messages:
       - "Purr.. purr.."
       - "Meow, I'm here!"
       - "Time to plot world domination.."
-    idle: 
+    looking:
       - "Meow."
       - "Purr.."
     interacted:
@@ -130,7 +132,7 @@ messages:
   villager_golem:
     spawned:
       - "*I shall protect thee!*"
-    idle: 
+    idle:
       - "*No hostile activity detected.*"
       - "*Patrol sequence finished, running again*"
     interacted:
@@ -148,7 +150,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    idle: a
+    looking:
       - "Ummm.... Oink!"
       - "Oink! I'm delicious!"
       - "Oink"
@@ -177,7 +179,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    idle: 
+    looking:
       - "Maaa..."
       - "Maaaaa... I'm bored.."
       - "Maaahaa!"
@@ -191,7 +193,7 @@ messages:
   squid:
     spawned:
       - ":)"
-    idle:
+    looking:
       - "I'm a Squid.. HerpaDerp!"
       - "Squip!"
     interacted:
@@ -209,7 +211,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    idle:
+    looking:
       - "I used to be an adventurer just like you, then I took an arrow to the knee."
       - "Let me guess, somebody stole your sweetroll?"
       - "I'm very busy, please leave me alone."
@@ -232,6 +234,8 @@ messages:
   enderman:
     spawned:
       - "Why am I part of this world?"
+    looking:
+      - "Don't look at me!"
     idle:
       - "%player% I see you."
       - "Where am I?"
@@ -256,7 +260,7 @@ messages:
       - "Here I am!"
       - "Wahhhh!"
       - "I'm coming!"
-    idle:
+    looking:
       - "Bark, bark"
       - "Growl"
       - "Pork, mmmmmmmm."
@@ -278,7 +282,7 @@ messages:
   zombie_pigman:
     spawned:
       - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
-    idle:
+    looking:
       - "Squuuueee!!"
       - "Oink-Ouuuaaah!"
     attacked:
@@ -348,7 +352,7 @@ messages:
   slime:
     spawned:
       - "*Blop*?"
-    idle:
+    looking:
       - "*Blop* *blop*"
     attacked:
       - "*Blop* *blop*"
@@ -380,7 +384,7 @@ messages:
   silverfish:
     spawned:
       - "Nsssta?"
-    idle:
+    looking:
       - "Nsst!  Nsssst!"
     attacked:
       - "Nsst!  Nsssst!"
@@ -389,7 +393,7 @@ messages:
   spider:
     spawned:
       - "NsssSssssSSsta?"
-    idle:
+    looking:
       - "Nsssssst!"
     attacked:
       - "Nsssssst!"
@@ -398,7 +402,7 @@ messages:
   cave_spider:
     spawned:
       - "NsssSssssSSsta?"
-    idle:
+    looking:
       - "Nsssssst!"
     attacked:
       - "Nsssssst!"
@@ -407,7 +411,7 @@ messages:
   zombie:
     spawned:
       - "Uhhhhh-UHHHHHH?"
-    idle:
+    looking:
       - "Uhhh... Brains..."
       - "Uhhhhhhh... Uh! Uh..."
       - "Brains... brains..."
@@ -435,7 +439,7 @@ messages:
   ender_dragon:
     spawned:
       - "Every Soul and World will belong to me!"
-    idle:
+    looking:
       - "You know nothing.. Nothing!"
       - "The Ender is here!"
       - "I will consume all!"
@@ -449,7 +453,7 @@ messages:
   giant:
     spawned:
       - "SMASH!!"
-    idle:
+    looking:
       - "Uhhh... Smash..."
       - "Uhhhhhhh... Uh! Uh..."
       - "Smash... Smash..."
