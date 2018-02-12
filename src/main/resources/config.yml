@@ -51,9 +51,9 @@ messages:
       - "Some people have so much respect for their superiors they have none left for themselves."
       - "When the water reaches the upper level, follow the rats."
       - "Never face facts; if you do, you'll never get up in the morning."
-      - "I don't have an English accent because this is what English sounds like when spoken properly." 
+      - "I don't have an English accent because this is what English sounds like when spoken properly."
       - "Things won are done; joy's soul lies in the doing."
-      - "It is difficult to get a man to understand something when his job depends on not understanding it." 
+      - "It is difficult to get a man to understand something when his job depends on not understanding it."
     attacked:
       - "You Shall Not Pass!"
     killed:
@@ -70,7 +70,7 @@ messages:
       - "Bwak!"
       - "Bwak! Bwaaak!"
       - "Quack, I mean Bwak!"
-      - "Why did I cross the road?"      
+      - "Why did I cross the road?"
     attacked:
       - "Becawk!"
     killed:
@@ -251,7 +251,7 @@ messages:
       - "You're but a mere peice of existence!"
     killed:
       - "Curse you %player%!"
-      - "Gah!!" 
+      - "Gah!!"
   wolf:
     spawned:
       - "Arrrruuuuuu!"
@@ -277,7 +277,7 @@ messages:
       - "GRRRRRRR! AAAARRRUUUUU!"
       - "Grrrrrrrrr!!"
     killed:
-      - "Gah!!"      
+      - "Gah!!"
   zombie_pigman:
     spawned:
       - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
@@ -289,7 +289,7 @@ messages:
       - "OOOUUUUUUAA!!"
       - "OOouuaah! OOouuaah!"
     killed:
-      - "Gah!!"   
+      - "Gah!!"
   blaze:
     spawned:
       - "hm?"
@@ -448,7 +448,7 @@ messages:
       - "You dare attack me?!"
       - "I'm unstopppable you fool!"
     killed:
-      - "How can this be?! This is IMPOSSIIIIIIBLE!!!!"   
+      - "How can this be?! This is IMPOSSIIIIIIBLE!!!!"
   giant:
     spawned:
       - "SMASH!!"
