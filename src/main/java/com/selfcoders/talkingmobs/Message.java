@@ -15,6 +15,8 @@ import java.util.logging.Level;
  */
 public class Message {
     private final TalkingMobs plugin;
+    private final Config messagesConfig;
+    private final Config playersConfig;
     private HashMap<String, Long> lastMessage = new HashMap<>();
 
     /**
@@ -58,6 +60,17 @@ public class Message {
      */
     Message(TalkingMobs pluginInstance) {
         plugin = pluginInstance;
+
+        messagesConfig = new Config(plugin, "messages.yml");
+        playersConfig = new Config(plugin, "players.yml");
+    }
+
+    /**
+     * Reload the messages
+     */
+    public void reloadConfig() {
+        messagesConfig.reload();
+        playersConfig.reload();
     }
 
     /**
@@ -71,9 +84,9 @@ public class Message {
         List<String> messages;
         String mobTypeName = mob.getType().name().toLowerCase();
 
-        messages = plugin.getConfig().getStringList("messages." + mobTypeName + "." + eventType.toString());
+        messages = messagesConfig.getConfig().getStringList(mobTypeName + "." + eventType.toString());
         if (messages.size() == 0) {
-            messages = plugin.getConfig().getStringList("messages.default." + eventType.toString());
+            messages = messagesConfig.getConfig().getStringList("default." + eventType.toString());
         }
 
         if (messages.size() > 0) {
@@ -125,9 +138,7 @@ public class Message {
             return false;
         }
 
-        String path = "players." + player.getName() + ".enabled." + eventType.toString();
-
-        return plugin.getConfig().getBoolean(path, true);
+        return playersConfig.getConfig().getBoolean(player.getName() + ".enabled." + eventType.name(), true);
     }
 
     /**
@@ -137,7 +148,7 @@ public class Message {
      * @return True if talking mobs is enabled, false otherwise
      */
     public boolean isEnabled(Player player) {
-        return plugin.getConfig().getBoolean("players." + player.getName() + ".enabled.all", true);
+        return playersConfig.getConfig().getBoolean(player.getName() + ".enabled.all", true);
     }
 
     private boolean isSpamming(Entity mob, Player player, EventType eventType) {
@@ -260,10 +271,10 @@ public class Message {
      * @param state     The new state
      */
     public void setEnabled(Player player, EventType eventType, Boolean state) {
-        plugin.getConfig().set("players." + player.getName() + ".enabled." + eventType.toString(), state);
-        plugin.getConfig().set("players." + player.getName() + ".enabled.all", true);
+        playersConfig.getConfig().set(player.getName() + ".enabled." + eventType.name(), state);
+        playersConfig.getConfig().set(player.getName() + ".enabled.all", true);
 
-        plugin.saveConfig();
+        playersConfig.save();
     }
 
     /**
@@ -273,12 +284,12 @@ public class Message {
      * @param state  The new state
      */
     public void setEnabled(Player player, Boolean state) {
-        plugin.getConfig().set("players." + player.getName() + ".enabled.all", state);
+        playersConfig.getConfig().set(player.getName() + ".enabled.all", state);
 
         for (EventType eventType : EventType.values()) {
-            plugin.getConfig().set("players." + player.getName() + ".enabled." + eventType.toString(), state);
+            playersConfig.getConfig().set(player.getName() + ".enabled." + eventType.name(), state);
         }
 
-        plugin.saveConfig();
+        playersConfig.save();
     }
 }

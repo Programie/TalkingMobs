@@ -1,0 +1,445 @@
+# This file defines the messages for each mob.
+
+# For each mob multiple message types can be defined (attacked, looking, killed and spawned).
+# Each message type contains a list of messages which are picked randomly.
+# The "default" section will be used if the requested mob type does not have the requested message type.
+
+default:
+  tamed:
+    - "OK... You are right, I will stick with you"
+snowman:
+  spawned:
+    - "I have been spawned!"
+  looking:
+    - "A man's feet should be planted in his country, but his eyes should survey the world."
+    - "Wine makes a man more pleased with himself; I do not say that it makes him more pleasing to others."
+    - "You can fool too many of the people too much of the time."
+    - "Some people have so much respect for their superiors they have none left for themselves."
+    - "When the water reaches the upper level, follow the rats."
+    - "Never face facts; if you do, you'll never get up in the morning."
+    - "I don't have an English accent because this is what English sounds like when spoken properly."
+    - "Things won are done; joy's soul lies in the doing."
+    - "It is difficult to get a man to understand something when his job depends on not understanding it."
+  attacked:
+    - "You Shall Not Pass!"
+  killed:
+    - "I have failed..."
+chicken:
+  spawned:
+    - "Bwak-Bwak?"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  interacted:
+    - "Bwak Bwak!!"
+  looking:
+    - "Bwak!"
+    - "Bwak! Bwaaak!"
+    - "Quack, I mean Bwak!"
+    - "Why did I cross the road?"
+  attacked:
+    - "Becawk!"
+  killed:
+    - "You guys are so mean.. gawd."
+    - "Bacaaa-"
+cow:
+  spawned:
+    - "Moooo?"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  looking:
+    - "Moo"
+    - "Moooooo!"
+  interacted:
+    - "My milk is GOOD!"
+    - "Hi, Moooo...."
+  attacked:
+    - "MOO?!"
+  killed:
+    - "You guys are so mean.. gawd."
+    - "Moo-"
+mooshroom:
+  spawned:
+    - "Moooo?"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm comingg!"
+  looking:
+    - "Moo"
+    - "Moooooo!"
+  interacted:
+    - "My milk is GOOD!"
+    - "Hi, Moooo...."
+    - "I don't feel so Moooo!"
+  attacked:
+    - "MOO?!"
+  killed:
+    - "You guys are so mean.. gawd."
+    - "Moo-"
+ocelot:
+  spawned:
+    - "Meow?"
+    - "Purr.. purr.."
+    - "Meow, I'm here!"
+    - "Time to plot world domination.."
+  looking:
+    - "Meow."
+    - "Purr.."
+  interacted:
+    - "Give me fish!"
+    - "I'm cute and cuddly!"
+    - "I hate Creepers."
+  attacked:
+    - "HISS!"
+  killed:
+    - "Hiss! Noooooo..."
+    - "Meow-"
+villager_golem:
+  spawned:
+    - "*I shall protect thee!*"
+  idle:
+    - "*No hostile activity detected.*"
+    - "*Patrol sequence finished, running again*"
+  interacted:
+    - "*Hello human*"
+    - "*Move along*"
+    - "*Buzzzz*"
+  attacked:
+    - "*THREAT DETECTED*"
+  killed:
+    - "*I have failed..*"
+    - "*Critical system error*"
+pig:
+  spawned:
+    - "Oink?"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  looking:
+    - "Ummm.... Oink!"
+    - "Oink! I'm delicious!"
+    - "Oink"
+    - "I'm a Pig."
+  interacted:
+    - "Good Day to you sir!"
+    - "The sheep are planning world domination, don't let them fool you."
+    - "Don't trust the cow's milk, they spiked it with ruffies."
+    - "The Chickens are all spies I tell you. I saw one sitting by my window spying on my wife undressing."
+    - "I once fooled around with a mooshroom, they are fun to be around but don't let them get your sister in a room all alone."
+    - "Blazes are so hot-headed, always thinking they're the shiz with their flying skills and giant fortresses. Hmph."
+    - "I believe one day the Ghasts are just going to commit to a mass suicide, with all their crying and mood swings."
+    - "I think the Zombies are crack heads, just warning you."
+  attacked:
+    - "HOLY S***!"
+    - "No no no no!"
+    - "OOOIIIINK!"
+    - "SQEEAAA!"
+  killed:
+    - "Ah! You got me!"
+    - "Hope you enjoy my bacon...."
+    - "I was about to share with you the secrets of the Universe!! guuuuhhh!!"
+sheep:
+  spawned:
+    - "Maahaaa!"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  looking:
+    - "Maaa..."
+    - "Maaaaa... I'm bored.."
+    - "Maaahaa!"
+  interacted:
+    - "I'm covered in wool!"
+  attacked:
+    - "Maaaaa Gawd!!!"
+  killed:
+    - "MaaaAh! You got me!"
+    - "Take my soft fluffy wool."
+squid:
+  spawned:
+    - ":)"
+  looking:
+    - "I'm a Squid.. HerpaDerp!"
+    - "Squip!"
+  interacted:
+    - "Hey, I'm a Squid!"
+    - "I listen to the Song of Storms!"
+    - "Squip!"
+    - "?"
+  attacked:
+    - "!"
+  killed:
+    - "...."
+villager:
+  spawned:
+    - "What the...?!"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  looking:
+    - "I used to be an adventurer just like you, then I took an arrow to the knee."
+    - "Let me guess, somebody stole your sweetroll?"
+    - "I'm very busy, please leave me alone."
+    - "I wish Notch or Jeb had given me some better clothes."
+    - "Hello there %player%."
+  attacked:
+    - "Death is highly overrated!"
+    - "Please don't kill me!!"
+    - "AH!! What are you doing?!"
+    - "Ow! That hurt!"
+    - "Nooo! I have a wife and kids!"
+  killed:
+    - "You won't get away with this..."
+    - "Noooooo!!"
+    - "Guuuhh.."
+    - "You Monster!"
+    - "Damnit!"
+    - "S*** I left the stove on!"
+    - "I have been slain!"
+enderman:
+  spawned:
+    - "Why am I part of this world?"
+  looking:
+    - "Don't look at me!"
+  idle:
+    - "%player% I see you."
+    - "Where am I?"
+    - "What's going on..?"
+    - "This world.."
+  interacted:
+    - "Who are you?"
+    - "This power..."
+  attacked:
+    - "You dare attack me?!"
+    - "You will pay dearly for that land dweller!"
+    - "I will devour you!"
+    - "You're but a mere piece of existence!"
+  killed:
+    - "Curse you %player%!"
+    - "Gah!!"
+wolf:
+  spawned:
+    - "Arrrruuuuuu!"
+    - "Woof!"
+    - "Here I am!"
+    - "Wahhhh!"
+    - "I'm coming!"
+  looking:
+    - "Bark, bark"
+    - "Growl"
+    - "Pork, mmmmmmmm."
+  interacted:
+    - "Feed me!"
+    - "Don't just stand there, give me a bone!"
+    - "Damn cats always starting trouble with us."
+    - "Damn that bacon really taste like heaven. So go get me some and feed me!"
+    - "What would I do for a good belly rub right now."
+    - "Scratch my ear! I can't reach it cause you know, I got no thumbs."
+    - "What would you do-o-o for a bacon bar! Do do!"
+    - "The dogs don't know what it's like to be free! It's great!"
+    - "Can't imagine what it would be like with a collar always on my neck. Probably feels like a chained necktie."
+  attacked:
+    - "GRRRRRRR! AAAARRRUUUUU!"
+    - "Grrrrrrrrr!!"
+  killed:
+    - "Gah!!"
+zombie_pigman:
+  spawned:
+    - "SQUEEEAAAA-OoooOOoouuUUueeEEe?"
+  looking:
+    - "Squuuueee!!"
+    - "Oink-Ouuuaaah!"
+  attacked:
+    - "SQuuueeEE-SQeeEee! OoOOUuUUUAA!!"
+    - "OOOUUUUUUAA!!"
+    - "OOouuaah! OOouuaah!"
+  killed:
+    - "Gah!!"
+blaze:
+  spawned:
+    - "hm?"
+    - "A new existence"
+  idle:
+    - "Where am I?"
+    - "What's going on..?"
+    - "This world.."
+    - "Why do I even exist?"
+  interacted:
+    - "Who are you?"
+    - "The Nether consumes all."
+    - "This power..."
+    - "I'm that of the element of fire."
+  attacked:
+    - "You dare attack me?!"
+    - "I will set you a blaze!"
+    - "I will burn you to a crisp!"
+    - "You're but a mere piece of existence!"
+    - "You will be consumed by my flames!"
+  killed:
+    - "This.. is.. not the end.."
+    - "You will die soon enough mortal"
+    - "Impossible..."
+creeper:
+  spawned:
+    - "Sssssst?"
+  idle:
+    - "Sssss..."
+    - "That'ssss a nice housssse you got there..."
+  attacked:
+    - "?!"
+    - "Self-Destruct Initiated"
+    - "SSSssss.... SSssss!!"
+  killed:
+    - "...!"
+ghast:
+  spawned:
+    - "You have Summoned me?"
+  idle:
+    - "Where am I?"
+    - "What's going on..?"
+    - "This world.."
+    - "Why do I even exist?"
+  interacted:
+    - "Whaaaaa!"
+    - "MMmmmmp.."
+  attacked:
+    - "Whaaaa?!"
+    - "Mus- kill Traveller..."
+    - "An enemy..."
+    - "A traveller from another world!"
+    - "You will die here."
+    - "You're but a mere piece of existence!"
+  killed:
+    - "This.. is.. not the end.."
+    - "You will die soon enough mortal"
+    - "Impossible..."
+slime:
+  spawned:
+    - "*Blop*?"
+  looking:
+    - "*Blop* *blop*"
+  attacked:
+    - "*Blop* *blop*"
+    - "Attack my brothers!"
+skeleton:
+  spawned:
+    - "I'm very near..."
+  idle:
+    - "I will shoot someone tonight."
+    - "*Rattle* *Rattle*"
+    - "*Clink*"
+    - "Damn bow is always getting holes from those damn worms."
+    - "I wonder what it feels like to have flesh.."
+    - "Damn those mummies got it good, just dozing around in those nice catacombs."
+    - "The sun is just to hot, why would anyone want to even have a sun?"
+    - "The moons glow tonight is soothing me to the bone marrow."
+  attacked:
+    - "I thought bones were supposed to be stronger than this!"
+    - "Gah! This is the last time you will ever see the light of day!"
+    - "Your soul is my mine!"
+    - "Damn this bow is inaccurate."
+    - "I'm going to have a nice feast when i'm done with you!"
+    - "Hope to see you in the nether fleshie!"
+  killed:
+    - "Curses!!"
+    - "This is Impossible!!"
+    - "This is not the last time you will see me!"
+    - "Ugh! You big smelly willy!"
+silverfish:
+  spawned:
+    - "Nsssta?"
+  looking:
+    - "Nsst!  Nsssst!"
+  attacked:
+    - "Nsst!  Nsssst!"
+  killed:
+    - "Nsssta!!"
+spider:
+  spawned:
+    - "NsssSssssSSsta?"
+  looking:
+    - "Nsssssst!"
+  attacked:
+    - "Nsssssst!"
+  killed:
+    - "Nsssta!!"
+cave_spider:
+  spawned:
+    - "NsssSssssSSsta?"
+  looking:
+    - "Nsssssst!"
+  attacked:
+    - "Nsssssst!"
+  killed:
+    - "Nsssta!!"
+zombie:
+  spawned:
+    - "Uhhhhh-UHHHHHH?"
+  looking:
+    - "Uhhh... Brains..."
+    - "Uhhhhhhh... Uh! Uh..."
+    - "Brains... brains..."
+    - "Muh... Uh... eh... Brains?"
+  interacted:
+    - "Uh?! Brains..."
+    - "Guh, ugh... huu...."
+    - "Brains?... Uh! Uhuuhhuu!"
+    - "Uhhhh... uhuuuu... Uh!"
+  attacked:
+    - "UUUUUHHH!!!!"
+    - "Ha..uh...eh... Brains!"
+    - "Huuh...uuuhuhuuu..."
+    - "BRAINS...uh!"
+    - "BRAINS, BRAINS, BRAINS!"
+    - "UUUHHHHHH, AHHH!"
+    - "Eh... Uh... Brains!"
+    - "Uh...! Uh! Uh!"
+  killed:
+    - "Aaarrghhhh!"
+    - "Guhhh!!!"
+    - "Aahuhhhh!"
+    - "Ehhhhuhh!!!"
+    - "Guuhhh-ehhh basta-Guuhhh!"
+ender_dragon:
+  spawned:
+    - "Every Soul and World will belong to me!"
+  looking:
+    - "You know nothing.. Nothing!"
+    - "The Ender is here!"
+    - "I will consume all!"
+  interacted:
+    - "Foolish creature."
+  attacked:
+    - "You dare attack me?!"
+    - "I'm unstoppable you fool!"
+  killed:
+    - "How can this be?! This is IMPOSSIIIIIIBLE!!!!"
+giant:
+  spawned:
+    - "SMASH!!"
+  looking:
+    - "Uhhh... Smash..."
+    - "Uhhhhhhh... Uh! Uh..."
+    - "Smash... Smash..."
+    - "Muh... Uh... eh... Smash?"
+  interacted:
+    - "Uh?! Brains..."
+    - "Guh, ugh... huu...."
+    - "Smash?... Uh! Uhuuhhuu!"
+    - "Uhhhh... uhuuuu... Uh!"
+  attacked:
+    - "UUUUUHHH!!!!"
+    - "Ha..uh...eh... Brains!"
+    - "Huuh...uuuhuhuuu..."
+    - "SMASH...uh!"
+  attacked:
+    - "SMASH, SMASH, SMASH!"
+    - "UUUHHHHHH, AHHH!"
+    - "Eh... Uh... Smash!"
+    - "Uh...! Uh! Uh!"
+  killed:
+    - "Aaarrghhhh!"
+    - "Yuhhh!!!"
+    - "Aahuhhhh!"
+    - "Ehhhhuhh!!!"

@@ -16,8 +16,7 @@ public final class TalkingMobs extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        saveDefaultConfig();
 
         PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new EventListener(message, this), this);
@@ -96,5 +95,12 @@ public final class TalkingMobs extends JavaPlugin {
         }
 
         return false;
+    }
+
+    @Override
+    public void reloadConfig() {
+        super.reloadConfig();
+
+        message.reloadConfig();
     }
 }
