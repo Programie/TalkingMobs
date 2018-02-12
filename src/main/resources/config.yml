@@ -248,7 +248,7 @@ messages:
       - "You dare attack me?!"
       - "You will pay dearly for that land dweller!"
       - "I will devour you!"
-      - "You're but a mere peice of existence!"
+      - "You're but a mere piece of existence!"
     killed:
       - "Curse you %player%!"
       - "Gah!!"
@@ -269,7 +269,7 @@ messages:
       - "Damn cats always starting trouble with us."
       - "Damn that bacon really taste like heaven. So go get me some and feed me!"
       - "What would I do for a good belly rub right now."
-      - "Scratch my ear noaw! I can't reach it cause you know, I got no thumbs."
+      - "Scratch my ear! I can't reach it cause you know, I got no thumbs."
       - "What would you do-o-o for a bacon bar! Do do!"
       - "The dogs don't know what it's like to be free! It's great!"
       - "Can't imagine what it would be like with a collar always on my neck. Probably feels like a chained necktie."
@@ -293,7 +293,7 @@ messages:
   blaze:
     spawned:
       - "hm?"
-      - "A new existance"
+      - "A new existence"
     idle:
       - "Where am I?"
       - "What's going on..?"
@@ -343,7 +343,7 @@ messages:
       - "An enemy..."
       - "A traveller from another world!"
       - "You will die here."
-      - "You're but a mere peice of existence!"
+      - "You're but a mere piece of existence!"
     killed:
       - "This.. is.. not the end.."
       - "You will die soon enough mortal"
@@ -355,7 +355,7 @@ messages:
       - "*Blop* *blop*"
     attacked:
       - "*Blop* *blop*"
-      - "Attack my borthers!"
+      - "Attack my brothers!"
   skeleton:
     spawned:
       - "I'm very near..."
@@ -446,7 +446,7 @@ messages:
       - "Foolish creature."
     attacked:
       - "You dare attack me?!"
-      - "I'm unstopppable you fool!"
+      - "I'm unstoppable you fool!"
     killed:
       - "How can this be?! This is IMPOSSIIIIIIBLE!!!!"
   giant:
