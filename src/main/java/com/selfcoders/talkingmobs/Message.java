@@ -84,22 +84,22 @@ public class Message {
         List<String> messages;
         String mobTypeName = mob.getType().name().toLowerCase();
 
-        messages = messagesConfig.getConfig().getStringList(mobTypeName + "." + eventType.toString());
+        messages = messagesConfig.getConfig().getStringList(mobTypeName + "." + eventType.name());
         if (messages.size() == 0) {
-            messages = messagesConfig.getConfig().getStringList("default." + eventType.toString());
+            messages = messagesConfig.getConfig().getStringList("default." + eventType.name());
         }
 
         if (messages.size() > 0) {
             Random randomGenerator = new Random();
 
-            String message = plugin.getConfig().getString("messageFormat." + eventType.toString());
+            String message = plugin.getConfig().getString("messageFormat." + eventType.name());
 
             if (message == null) {
                 message = plugin.getConfig().getString("messageFormat.default");
 
                 if (message == null) {
                     message = "[&a%mobname%&r] %message%";
-                    plugin.getLogger().log(Level.INFO, "Message format for event type ''{0}'' not defined!", eventType.toString());
+                    plugin.getLogger().log(Level.INFO, "Message format for event type ''{0}'' not defined!", eventType.name());
                 }
             }
 
@@ -109,7 +109,7 @@ public class Message {
 
             return message;
         } else {
-            plugin.getLogger().log(Level.INFO, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.toString(), mobTypeName});
+            plugin.getLogger().log(Level.INFO, "No messages for event ''{0}'' of mob ''{1}'' defined!", new Object[]{eventType.name(), mobTypeName});
         }
 
         return null;

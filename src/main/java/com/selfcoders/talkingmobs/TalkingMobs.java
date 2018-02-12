@@ -37,7 +37,7 @@ public final class TalkingMobs extends JavaPlugin {
                         if (sender instanceof Player) {
                             List<String> eventTypes = new ArrayList<>();
                             for (Message.EventType eventType : Message.EventType.values()) {
-                                eventTypes.add(eventType.toString());
+                                eventTypes.add(eventType.name());
                             }
 
                             lines.add("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
