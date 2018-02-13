@@ -56,6 +56,8 @@ public final class TalkingMobs extends JavaPlugin {
                 PluginDescriptionFile description = getDescription();
 
                 sender.sendMessage(ChatColor.GOLD + description.getName() + " " + ChatColor.RED + description.getVersion());
+                sender.sendMessage(ChatColor.DARK_GREEN + "by Programie");
+                sender.sendMessage(ChatColor.DARK_GREEN + description.getWebsite());
                 return true;
         }
 
