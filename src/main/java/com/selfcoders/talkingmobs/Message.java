@@ -44,7 +44,7 @@ public class Message {
          */
         looking,
         /**
-         * Mob has been spawned (Currently only mob spawner or egg)
+         * Mob has been spawned (Mob spawner, egg or another plugin by default, but can be configured in config.yml)
          */
         spawned,
         /**
