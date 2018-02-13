@@ -44,6 +44,7 @@ The /talkingmobs command is the one and only command provided by this plugin.
 
 The following sub commands are currently available:
 
- * help - Show the help of the plugin
- * reload - Reload the configuration
- * toggle [type] - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified event type)
+ * `help` - Show the help of the plugin
+ * `reload` - Reload the configuration
+ * `toggle` - Toggle messages sent by mobs
+ * `version` - Show the version of the plugin
