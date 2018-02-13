@@ -9,6 +9,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public final class TalkingMobs extends JavaPlugin {
@@ -24,74 +25,32 @@ public final class TalkingMobs extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("talkingmobs")) {
-            if (args.length >= 1) {
-                switch (args[0]) {
-                    case "help":
-                        List<String> lines = new ArrayList<>();
+        if (!command.getName().equalsIgnoreCase("talkingmobs")) {
+            return false;
+        }
 
-                        if (sender.hasPermission("talkingmobs.reload")) {
-                            lines.add("/talkingmobs reload - Reload the configuration");
-                        }
+        if (args.length == 0) {
+            return false;
+        }
 
-                        if (sender instanceof Player) {
-                            List<String> eventTypes = new ArrayList<>();
-                            for (Message.EventType eventType : Message.EventType.values()) {
-                                eventTypes.add(eventType.name());
-                            }
+        String subCommand = args[0];
 
-                            lines.add("/talkingmobs toggle <type> - Toggle messages sent by mobs (Type is optional and can be used to only toggle the specified message type)");
-                            lines.add("");
-                            lines.add("Message types: " + StringUtils.join(eventTypes, ", "));
-                        }
-
-                        sender.sendMessage(lines.toArray(new String[0]));
-
-                        return true;
-                    case "reload":
-                        if (sender.hasPermission("talkingmobs.reload")) {
-                            sender.sendMessage("Reloading configuration...");
-                            this.reloadConfig();
-                            sender.sendMessage("Done");
-                        } else {
-                            sender.sendMessage(ChatColor.RED + "You do not have the required permissions for this command!");
-                        }
-
-                        return true;
-                    case "toggle":
-                        if (sender instanceof Player) {
-                            Player player = (Player) sender;
-
-                            if (args.length >= 2) {
-                                try {
-                                    Message.EventType eventType = Message.EventType.valueOf(args[1]);
-
-                                    if (message.isEnabled(player, eventType)) {
-                                        message.setEnabled(player, eventType, false);
-                                        sender.sendMessage(ChatColor.GREEN + "Mob messages for type '" + ChatColor.BLUE + args[1] + ChatColor.GREEN + "' disabled");
-                                    } else {
-                                        message.setEnabled(player, eventType, true);
-                                        sender.sendMessage(ChatColor.GREEN + "Mob messages for type '" + ChatColor.BLUE + args[1] + ChatColor.GREEN + "' enabled");
-                                    }
-                                } catch (IllegalArgumentException exception) {
-                                    sender.sendMessage(ChatColor.RED + "Invalid type: " + args[1]);
-                                }
-                            } else {
-                                if (message.isEnabled(player)) {
-                                    message.setEnabled(player, false);
-                                    sender.sendMessage(ChatColor.GREEN + "Mob messages disabled");
-                                } else {
-                                    message.setEnabled(player, true);
-                                    sender.sendMessage(ChatColor.GREEN + "Mob messages enabled");
-                                }
-                            }
-                        } else {
-                            sender.sendMessage(ChatColor.RED + "This command can only be run by a player!");
-                        }
-
-                        return true;
+        switch (subCommand) {
+            case "help":
+                printHelp(sender);
+                return true;
+            case "reload":
+                if (sender.hasPermission(Permission.RELOAD.permission())) {
+                    sender.sendMessage("Reloading configuration...");
+                    reloadConfig();
+                    sender.sendMessage("Done");
+                } else {
+                    sender.sendMessage(ChatColor.RED + "You do not have the required permissions for this command!");
                 }
-            }
+                return true;
+            case "toggle":
+                toggle(sender, Arrays.copyOfRange(args, 1, args.length));
+                return true;
         }
 
         return false;
@@ -102,5 +61,87 @@ public final class TalkingMobs extends JavaPlugin {
         super.reloadConfig();
 
         message.reloadConfig();
+    }
+
+    private void printHelp(CommandSender sender) {
+        List<String> lines = new ArrayList<>();
+
+        lines.add(ChatColor.YELLOW + "----------" + ChatColor.WHITE + " Subcommands " + ChatColor.YELLOW + "----------");
+
+        if (sender.hasPermission(Permission.RELOAD.permission())) {
+            lines.add(ChatColor.GOLD + "/talkingmobs reload: " + ChatColor.WHITE + "Reload the configuration");
+        }
+
+        if (sender instanceof Player) {
+            lines.add(ChatColor.GOLD + "/talkingmobs toggle <type>: " + ChatColor.WHITE + "Toggle messages sent by mob");
+            lines.add("");
+            lines.add(messageTypesList());
+        }
+
+        sender.sendMessage(lines.toArray(new String[0]));
+    }
+
+    private void toggle(CommandSender sender, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(ChatColor.RED + "This command can only be run by a player!");
+            return;
+        }
+
+        Player player = (Player) sender;
+
+        if (args.length == 0) {
+            List<String> lines = new ArrayList<>();
+
+            lines.add("Usage: " + ChatColor.GOLD + "/talkingmobs toggle <type>");
+            lines.add("");
+            lines.add(messageTypesList());
+
+            sender.sendMessage(lines.toArray(new String[0]));
+
+            return;
+        }
+
+        String type = args[0];
+
+        if (type.equalsIgnoreCase("all")) {
+            if (message.isEnabled(player)) {
+                message.setEnabled(player, false);
+                sender.sendMessage(ChatColor.GREEN + "Mob messages disabled");
+            } else {
+                message.setEnabled(player, true);
+                sender.sendMessage(ChatColor.GREEN + "Mob messages enabled");
+            }
+
+            return;
+        }
+
+        Message.EventType eventType;
+
+        try {
+            eventType = Message.EventType.valueOf(type);
+        } catch (IllegalArgumentException exception) {
+            sender.sendMessage(ChatColor.RED + "Invalid type: " + type);
+            return;
+        }
+
+        if (message.isEnabled(player, eventType)) {
+            message.setEnabled(player, eventType, false);
+            sender.sendMessage(ChatColor.GREEN + "Mob messages for type '" + ChatColor.BLUE + type + ChatColor.GREEN + "' disabled");
+        } else {
+            message.setEnabled(player, eventType, true);
+            sender.sendMessage(ChatColor.GREEN + "Mob messages for type '" + ChatColor.BLUE + type + ChatColor.GREEN + "' enabled");
+        }
+    }
+
+    private String messageTypesList() {
+        List<String> eventTypes = new ArrayList<>();
+
+        eventTypes.add("all");
+
+        for (Message.EventType eventType : Message.EventType.values()) {
+            eventTypes.add(eventType.name());
+        }
+
+        return "Message types: " + ChatColor.DARK_GREEN + StringUtils.join(eventTypes, ChatColor.WHITE + ", " + ChatColor.DARK_GREEN);
     }
 }

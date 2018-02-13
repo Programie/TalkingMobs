@@ -122,7 +122,7 @@ public class Message {
      * @return True if the player has the permission, false otherwise
      */
     private boolean isAllowed(Player player) {
-        return player.hasPermission("talkingmobs.receive");
+        return player.hasPermission(Permission.RECEIVE.permission());
     }
 
     /**
