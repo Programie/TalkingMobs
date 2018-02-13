@@ -8,7 +8,7 @@
 
     <name>TalkingMobs</name>
     <description>Let mobs talk to players on events like damage or death</description>
-    <url>https://selfcoders.com</url>
+    <url>https://github.com/Programie/TalkingMobs</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
