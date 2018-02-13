@@ -16,11 +16,6 @@ You can get the latest release from [bukkit.org](https://dev.bukkit.org/projects
 You may also check out the project from the repository and build it yourself (See Build section bellow).
 
 
-## Custom messages
-
-All messages can be customized in the [messages.yml](src/main/resources/messages.yml) file.
-
-
 ## Permissions
 
 TalkingMobs knows the following permissions:
@@ -56,6 +51,11 @@ The following event types are currently available and can be used for the type i
 * `looking` - Mob is looking at the player (and player is looking at the mob)
 * `spawn` - Mob has been spawned (Mob spawner, egg or another plugin by default, but can be configured in config.yml)
 * `tamed` - Mob has been tamed
+
+
+## Custom messages
+
+All messages can be customized in the [messages.yml](src/main/resources/messages.yml) file.
 
 
 ## Build
