@@ -2,6 +2,9 @@
 # Only players in this range to the talking mob will see the message
 maxDistance: 0
 
+# The maximum distance between a mob and a player to send "looking" messages
+max-looking-distance: 10
+
 # The time in milliseconds to wait before sending another message for the same mob to the same player for the same event
 spam-timeout: 3000
 

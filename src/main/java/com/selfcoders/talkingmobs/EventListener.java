@@ -122,7 +122,7 @@ class EventListener implements Listener {
                 continue;
             }
 
-            if (location.distance(entity.getLocation()) > 10) {
+            if (location.distance(entity.getLocation()) > plugin.getConfig().getDouble("max-looking-distance")) {
                 continue;
             }
 
