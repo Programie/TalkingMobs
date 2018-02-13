@@ -70,21 +70,17 @@ public final class TalkingMobs extends JavaPlugin {
     }
 
     private void printHelp(CommandSender sender) {
-        List<String> lines = new ArrayList<>();
-
-        lines.add(ChatColor.YELLOW + "----------" + ChatColor.WHITE + " Subcommands " + ChatColor.YELLOW + "----------");
+        sender.sendMessage(ChatColor.YELLOW + "----------" + ChatColor.WHITE + " Subcommands " + ChatColor.YELLOW + "----------");
 
         if (sender.hasPermission(Permission.RELOAD.permission())) {
-            lines.add(ChatColor.GOLD + "/talkingmobs reload: " + ChatColor.WHITE + "Reload the configuration");
+            sender.sendMessage(ChatColor.GOLD + "/talkingmobs reload: " + ChatColor.WHITE + "Reload the configuration");
         }
 
         if (sender instanceof Player) {
-            lines.add(ChatColor.GOLD + "/talkingmobs toggle <type>: " + ChatColor.WHITE + "Toggle messages sent by mob");
-            lines.add("");
-            lines.add(messageTypesList());
+            sender.sendMessage(ChatColor.GOLD + "/talkingmobs toggle <type>: " + ChatColor.WHITE + "Toggle messages sent by mob");
+            sender.sendMessage("");
+            sender.sendMessage(messageTypesList());
         }
-
-        sender.sendMessage(lines.toArray(new String[0]));
     }
 
     private void toggle(CommandSender sender, String[] args) {
@@ -96,13 +92,9 @@ public final class TalkingMobs extends JavaPlugin {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            List<String> lines = new ArrayList<>();
-
-            lines.add("Usage: " + ChatColor.GOLD + "/talkingmobs toggle <type>");
-            lines.add("");
-            lines.add(messageTypesList());
-
-            sender.sendMessage(lines.toArray(new String[0]));
+            sender.sendMessage("Usage: " + ChatColor.GOLD + "/talkingmobs toggle <type>");
+            sender.sendMessage("");
+            sender.sendMessage(messageTypesList());
 
             return;
         }
