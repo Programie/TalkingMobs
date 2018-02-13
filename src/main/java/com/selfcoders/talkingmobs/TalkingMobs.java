@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -50,6 +51,11 @@ public final class TalkingMobs extends JavaPlugin {
                 return true;
             case "toggle":
                 toggle(sender, Arrays.copyOfRange(args, 1, args.length));
+                return true;
+            case "version":
+                PluginDescriptionFile description = getDescription();
+
+                sender.sendMessage(ChatColor.GOLD + description.getName() + " " + ChatColor.RED + description.getVersion());
                 return true;
         }
 
