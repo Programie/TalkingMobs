@@ -27,7 +27,7 @@ public final class TalkingMobs extends JavaPlugin {
         if (command.getName().equalsIgnoreCase("talkingmobs")) {
             if (args.length >= 1) {
                 switch (args[0]) {
-                    case "help":// TODO: Messages are in wrong order
+                    case "help":
                         List<String> lines = new ArrayList<>();
 
                         if (sender.hasPermission("talkingmobs.reload")) {
