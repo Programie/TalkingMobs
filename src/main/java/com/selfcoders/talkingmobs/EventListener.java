@@ -149,6 +149,6 @@ class EventListener implements Listener {
         Vector toEntity = otherEntity.getEyeLocation().toVector().subtract(eye.toVector());
         double dot = toEntity.normalize().dot(eye.getDirection());
 
-        return dot > 0.99D;
+        return dot > 0.90D;
     }
 }
