@@ -79,10 +79,10 @@ public final class TalkingMobs extends JavaPlugin {
         }
 
         if (sender instanceof Player) {
-            sender.sendMessage(ChatColor.GOLD + "/talkingmobs toggle <type>: " + ChatColor.WHITE + "Toggle messages sent by mob");
-            sender.sendMessage("");
-            sender.sendMessage(messageTypesList());
+            sender.sendMessage(ChatColor.GOLD + "/talkingmobs toggle: " + ChatColor.WHITE + "Toggle messages sent by mob");
         }
+
+        sender.sendMessage(ChatColor.GOLD + "/talkingmobs version: " + ChatColor.WHITE + " Show version of this plugin");
     }
 
     private void toggle(CommandSender sender, String[] args) {
