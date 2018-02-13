@@ -53,7 +53,9 @@ The following event types are currently available and can be used for the type i
 * `tamed` - Mob has been tamed
 
 
-## Custom messages
+## Configuration
+
+The main configuration can be changed by editing the [config.yml](src/main/resources/config.yml) file.
 
 All messages can be customized in the [messages.yml](src/main/resources/messages.yml) file.
 
