@@ -14,7 +14,8 @@ spam-timeout: 3000
 events:
   attacked: true
   interacted: true
-  killed: true
+  killed_player: true
+  killed_other: true
   looking: true
   spawned:
   - CUSTOM
@@ -32,6 +33,8 @@ messageFormat:
 #  attacked: "[&a%mobname%&r] %message%"
 #  interacted: "[&a%mobname%&r] %message%"
 #  killed: "[&a%mobname%&r] &c%message%"
+#  killed_player: "[&a%mobname%&r] &c%message%"
+#  killed_other: "[&a%mobname%&r] &c%message%"
 #  looking: "[&a%mobname%&r] &c%message%"
 #  spawned: "[&a%mobname%&r] %message%"
 #  tamed: "[&a%mobname%&r] %message%"

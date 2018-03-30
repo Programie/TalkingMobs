@@ -118,8 +118,12 @@ public final class TalkingMobs extends JavaPlugin {
         Message.EventType eventType;
 
         try {
-            eventType = Message.EventType.valueOf(type);
+            eventType = Message.EventType.fromString(type);
         } catch (IllegalArgumentException exception) {
+            return;
+        }
+
+        if (eventType == null || !eventType.isToggleable()) {
             sender.sendMessage(ChatColor.RED + "Invalid type: " + type);
             return;
         }
@@ -139,7 +143,11 @@ public final class TalkingMobs extends JavaPlugin {
         eventTypes.add("all");
 
         for (Message.EventType eventType : Message.EventType.values()) {
-            eventTypes.add(eventType.name());
+            if (!eventType.isToggleable()) {
+                continue;
+            }
+
+            eventTypes.add(eventType.getType());
         }
 
         return "Message types: " + ChatColor.DARK_GREEN + StringUtils.join(eventTypes, ChatColor.WHITE + ", " + ChatColor.DARK_GREEN);

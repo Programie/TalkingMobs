@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ class EventListener implements Listener {
         List<String> allowedSpawnReasons = plugin.getConfig().getStringList("events.spawned");
 
         if (allowedSpawnReasons.contains(spawnReason.name())) {
-            message.sendMessage(entity, Message.EventType.spawned);
+            message.sendMessage(entity, Message.EventType.SPAWNED);
         }
     }
 
@@ -56,21 +57,38 @@ class EventListener implements Listener {
         Entity entity = event.getEntity();
 
         if (damager instanceof Player && !entity.isDead()) {
-            message.sendMessage(entity, (Player) damager, Message.EventType.attacked);
+            message.sendMessage(entity, (Player) damager, Message.EventType.ATTACKED);
         }
     }
 
     @EventHandler
     public void onEntityKilled(EntityDeathEvent event) {
-        if (!plugin.getConfig().getBoolean("events.killed")) {
-            return;
-        }
-
         LivingEntity entity = event.getEntity();
         Player killer = entity.getKiller();
 
-        if (killer != null) {
-            message.sendMessage(entity, killer, Message.EventType.killed);
+        if (killer == null) {
+            if (!plugin.getConfig().getBoolean("events.killed_other")) {
+                return;
+            }
+
+            List<Message.EventType> eventTypes = new ArrayList<>();
+
+            eventTypes.add(Message.EventType.KILLED_OTHER);
+            eventTypes.add(Message.EventType.KILLED);
+
+            message.sendMessage(entity, Message.EventType.KILLED_OTHER, eventTypes);
+        } else {
+            // events.killed is used till version 1.3 and is now deprecated
+            if (!plugin.getConfig().getBoolean("events.killed_player") && !plugin.getConfig().getBoolean("events.killed")) {
+                return;
+            }
+
+            List<Message.EventType> eventTypes = new ArrayList<>();
+
+            eventTypes.add(Message.EventType.KILLED_PLAYER);
+            eventTypes.add(Message.EventType.KILLED);
+
+            message.sendMessage(entity, killer, Message.EventType.KILLED_PLAYER, eventTypes);
         }
     }
 
@@ -80,7 +98,7 @@ class EventListener implements Listener {
             return;
         }
 
-        message.sendMessage(event.getRightClicked(), event.getPlayer(), Message.EventType.interacted);
+        message.sendMessage(event.getRightClicked(), event.getPlayer(), Message.EventType.INTERACTED);
     }
 
     @EventHandler
@@ -97,7 +115,7 @@ class EventListener implements Listener {
 
         Player player = (Player) owner;
 
-        message.sendMessage(event.getEntity(), player, Message.EventType.tamed);
+        message.sendMessage(event.getEntity(), player, Message.EventType.TAMED);
     }
 
     @EventHandler
@@ -133,7 +151,7 @@ class EventListener implements Listener {
     }
 
     private void onEntityFacingPlayer(LivingEntity entity, Player player) {
-        message.sendMessage(entity, player, Message.EventType.looking);
+        message.sendMessage(entity, player, Message.EventType.LOOKING);
     }
 
     /**

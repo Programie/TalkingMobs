@@ -47,10 +47,13 @@ The following event types are currently available and can be used for the type i
 * `attacked` - Mob has been attacked by a player
 * `idle` - Mob is idle, for example the mob is just standing/walking/running around (Currently unused)
 * `interacted` - Player interacted with the mob (Right click on mob)
-* `killed` - Mob has been killed by a player
+* `killed_player` - Mob has been killed by a player
+* `killed_other` - Mob has been killed by something else (not a player)
 * `looking` - Mob is looking at the player (and player is looking at the mob)
 * `spawn` - Mob has been spawned (Mob spawner, egg or another plugin by default, but can be configured in config.yml)
 * `tamed` - Mob has been tamed
+
+Additional to those event types, the `killed` event type can be used in the messages configuration to define a message for both types (player and other).
 
 
 ## Configuration
