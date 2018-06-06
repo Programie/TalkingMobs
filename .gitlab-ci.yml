@@ -26,4 +26,4 @@ maven-deploy:
     paths:
     - target/TalkingMobs.jar
   only:
-    - master
+    - tags
