@@ -5,11 +5,12 @@ A Minecraft Bukkit plugin which lets mobs talk to the player.
 ![](screenshot.png)
 
 [![pipeline status](https://gitlab.com/Programie/TalkingMobs/badges/master/pipeline.svg)](https://gitlab.com/Programie/TalkingMobs/commits/master)
+[![download latest release](https://img.shields.io/badge/download-latest-blue.svg)](https://gitlab.com/Programie/TalkingMobs/-/jobs/artifacts/master/raw/target/TalkingMobs.jar?job=release)
 
 
 ## Installation
 
-You can get the latest release from [bukkit.org](https://dev.bukkit.org/projects/talkingmobs) or [GitLab](https://gitlab.com/Programie/TalkingMobs/-/jobs/artifacts/master/raw/target/TalkingMobs.jar?job=maven-deploy).
+You can get the latest release from [bukkit.org](https://dev.bukkit.org/projects/talkingmobs) or [GitLab](https://gitlab.com/Programie/TalkingMobs/-/jobs/artifacts/master/raw/target/TalkingMobs.jar?job=release).
 
 You may also check out the project from the repository and build it yourself (See Build section bellow).
 
