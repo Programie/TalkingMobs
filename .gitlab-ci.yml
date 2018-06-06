@@ -1,0 +1,24 @@
+image: maven:3-jdk-8
+
+cache:
+  paths:
+    - .m2/repository
+
+maven-build:
+  stage: build
+  script: mvn compile
+
+maven-test:
+  stage: test
+  script: mvn test
+  dependencies: maven-build
+
+maven-deploy:
+  stage: deploy
+  script: mv target/staging public
+  dependencies: maven-test
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
