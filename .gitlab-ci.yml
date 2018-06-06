@@ -7,17 +7,17 @@ cache:
   paths:
     - .m2/
 
-maven-build:
+build:
   stage: build
   script: mvn compile
 
-maven-test:
+test:
   stage: test
   script: mvn test
   dependencies:
   - maven-build
 
-maven-deploy:
+release:
   stage: deploy
   script: mvn package
   dependencies:
