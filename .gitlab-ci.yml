@@ -16,11 +16,11 @@ maven-test:
 
 maven-deploy:
   stage: deploy
-  script: mv target/staging public
+  script: mvn package
   dependencies:
   - maven-test
   artifacts:
     paths:
-    - public
+    - target/TalkingMobs.jar
   only:
     - master
