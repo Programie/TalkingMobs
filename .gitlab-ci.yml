@@ -11,12 +11,14 @@ maven-build:
 maven-test:
   stage: test
   script: mvn test
-  dependencies: maven-build
+  dependencies:
+  - maven-build
 
 maven-deploy:
   stage: deploy
   script: mv target/staging public
-  dependencies: maven-test
+  dependencies:
+  - maven-test
   artifacts:
     paths:
     - public
