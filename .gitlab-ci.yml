@@ -15,13 +15,13 @@ test:
   stage: test
   script: mvn test
   dependencies:
-  - maven-build
+  - build
 
 release:
   stage: deploy
   script: mvn package
   dependencies:
-  - maven-test
+  - test
   artifacts:
     paths:
     - target/TalkingMobs.jar
