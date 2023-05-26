@@ -6,6 +6,7 @@ A Minecraft Bukkit plugin which lets mobs talk to the player.
 
 [![pipeline status](https://gitlab.com/Programie/TalkingMobs/badges/master/pipeline.svg)](https://gitlab.com/Programie/TalkingMobs/commits/master)
 [![download from GitLab](https://img.shields.io/badge/download-Releases-blue?logo=gitlab)](https://gitlab.com/Programie/TalkingMobs/-/releases)
+[![download from Modrinth](https://img.shields.io/badge/download-Modrinth-blue?logo=modrinth)](https://modrinth.com/plugin/talkingmobs)
 [![download from CurseForge](https://img.shields.io/badge/download-CurseForge-blue?logo=curseforge)](https://www.curseforge.com/minecraft/bukkit-plugins/talkingmobs)
 
 
