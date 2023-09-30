@@ -14,7 +14,12 @@
 
     <name>TalkingMobs</name>
     <description>Let mobs talk to players on events like damage or death</description>
-    <url>https://gitlab.com/Programie/TalkingMobs</url>
+    <url>https://github.com/Programie/TalkingMobs</url>
+
+    <scm>
+        <developerConnection>scm:git:ssh://git@github.com/Programie/TalkingMobs.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <properties>
         <bukkit-api-version>1.12.2</bukkit-api-version>
